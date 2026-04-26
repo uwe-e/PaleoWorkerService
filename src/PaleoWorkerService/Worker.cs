@@ -42,19 +42,12 @@ public class Worker : BackgroundService
     {
         var monitorUrl = _configuration["MonitorSettings:Url"];
         var localFilePath = _configuration["MonitorSettings:LocalFilePath"];
-        //var searchStrings = _configuration.GetSection("MonitorSettings:SearchStrings").Get<string[]>();
 
         if (string.IsNullOrEmpty(monitorUrl) && string.IsNullOrEmpty(localFilePath))
         {
             _logger.LogWarning("Monitor URL or local file path not configured");
             return;
         }
-
-        //if (searchStrings == null || searchStrings.Length == 0)
-        //{
-        //    _logger.LogWarning("Search strings not configured");
-        //    return;
-        //}
 
         string content;
 
@@ -65,7 +58,7 @@ public class Worker : BackgroundService
         }
         else
         {
-            _logger.LogInformation("Polling URL with Selenium: {url}", monitorUrl);
+            //_logger.LogInformation("Polling URL with Selenium: {url}", monitorUrl);
             content = await FetchWithSeleniumAsync(monitorUrl);
         }
 
@@ -133,16 +126,16 @@ public class Worker : BackgroundService
                 var productActionsDiv = productBox.SelectSingleNode(".//div[contains(@class, 'stx-ProductActions')]");
                 if (productActionsDiv != null)
                 {
-                    var kaufenSpan = productActionsDiv.SelectSingleNode(".//a//span")?.InnerText;
-                    if (!string.IsNullOrEmpty(kaufenSpan))
-                    {
+                    //var kaufenSpan = productActionsDiv.SelectSingleNode(".//a//span")?.InnerText;
+                    //if (!string.IsNullOrEmpty(kaufenSpan))
+                    //{
                         _logger.LogInformation("Found product available for purchase: {date}", eventDate);
                         products.Add(new ProductInfo
                         {
                             EventDate = eventDate ?? "Unknown",
                             HasKaufenOption = true
                         });
-                    }
+                    //}
                 }
             }
             catch (Exception ex)

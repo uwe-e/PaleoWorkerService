@@ -1,0 +1,734 @@
+<html lang="de" dir="ltr" data-react-helmet="lang">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    window.ddjskey = '6CD137753AF7EAA4681637F40497D8';
+    window.ddoptions = {
+      ajaxListenerPath: true,
+      allowHtmlContentTypeOnCaptcha: true,
+      disableAutoRefreshOnCaptchaPassed: true,
+      replayAfterChallenge: true
+    };
+  </script>
+  <script src="https://js.datadome.co/tags.js" async=""></script>
+
+
+
+  <meta property="og:image" content="https://bourse.paleo.ch/light_custom/lightTheme/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Paléo Festival Nyon">
+  <title>Paléo Festival Nyon - Ticketing</title>
+  <meta name="description" content="Kaufen Sie Ihre Tickets online für Paléo Festival Nyon" data-react-helmet="true">
+  <link href="/resources/fonts/Lato/fonts.css" rel="stylesheet">
+  <style>
+    html,
+    body {
+      position: relative;
+      overflow-y: auto;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    body {
+      font-family: 'Lato';
+    }
+
+    #root {
+      min-height: 100%;
+      min-width: 100%;
+    }
+  </style>
+  <link href="/custom/PALEO_BOURS/custom.css" rel="stylesheet">
+  <link rel="alternate" hreflang="x-default" href="https://bourse.paleo.ch/content">
+  <link rel="alternate" hreflang="fr" href="https://bourse.paleo.ch/content?lang=fr">
+  <link rel="alternate" hreflang="de" href="https://bourse.paleo.ch/content?lang=de">
+  <link rel="alternate" hreflang="en" href="https://bourse.paleo.ch/content?lang=en">
+  <link rel="shortcut icon" href="https://bourse.paleo.ch/light_custom/lightTheme/favicon.png"
+    type="image/vnd.microsoft.icon">
+  <style data-styled-components=""></style>
+  <style>
+    .rc-tooltip.rc-tooltip-zoom-enter,
+    .rc-tooltip.rc-tooltip-zoom-leave {
+      display: block;
+    }
+
+    .rc-tooltip-zoom-enter,
+    .rc-tooltip-zoom-appear {
+      opacity: 0;
+      animation-duration: 0.3s;
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      animation-play-state: paused;
+    }
+
+    .rc-tooltip-zoom-leave {
+      animation-duration: 0.3s;
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);
+      animation-play-state: paused;
+    }
+
+    .rc-tooltip-zoom-enter.rc-tooltip-zoom-enter-active,
+    .rc-tooltip-zoom-appear.rc-tooltip-zoom-appear-active {
+      animation-name: rcToolTipZoomIn;
+      animation-play-state: running;
+    }
+
+    .rc-tooltip-zoom-leave.rc-tooltip-zoom-leave-active {
+      animation-name: rcToolTipZoomOut;
+      animation-play-state: running;
+    }
+
+    @keyframes rcToolTipZoomIn {
+      0% {
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transform: scale(0, 0);
+      }
+
+      100% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(1, 1);
+      }
+    }
+
+    @keyframes rcToolTipZoomOut {
+      0% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(1, 1);
+      }
+
+      100% {
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transform: scale(0, 0);
+      }
+    }
+
+    .rc-tooltip {
+      position: absolute;
+      z-index: 1070;
+      display: block;
+      visibility: visible;
+      line-height: 1.5;
+      font-size: 12px;
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 1px;
+      opacity: 0.9;
+    }
+
+    .rc-tooltip-hidden {
+      display: none;
+    }
+
+    .rc-tooltip-inner {
+      padding: 8px 10px;
+      color: #333333;
+      text-align: left;
+      text-decoration: none;
+      background-color: #ffffff;
+      border-radius: 3px;
+      min-height: 34px;
+      border: 1px solid #b1b1b1;
+    }
+
+    .rc-tooltip-arrow,
+    .rc-tooltip-arrow-inner {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    .rc-tooltip-placement-top .rc-tooltip-arrow,
+    .rc-tooltip-placement-topLeft .rc-tooltip-arrow,
+    .rc-tooltip-placement-topRight .rc-tooltip-arrow {
+      bottom: -5px;
+      margin-left: -6px;
+      border-width: 6px 6px 0;
+      border-top-color: #b1b1b1;
+    }
+
+    .rc-tooltip-placement-top .rc-tooltip-arrow-inner,
+    .rc-tooltip-placement-topLeft .rc-tooltip-arrow-inner,
+    .rc-tooltip-placement-topRight .rc-tooltip-arrow-inner {
+      bottom: 1px;
+      margin-left: -6px;
+      border-width: 6px 6px 0;
+      border-top-color: #ffffff;
+    }
+
+    .rc-tooltip-placement-top .rc-tooltip-arrow {
+      left: 50%;
+    }
+
+    .rc-tooltip-placement-topLeft .rc-tooltip-arrow {
+      left: 15%;
+    }
+
+    .rc-tooltip-placement-topRight .rc-tooltip-arrow {
+      right: 15%;
+    }
+
+    .rc-tooltip-placement-right .rc-tooltip-arrow,
+    .rc-tooltip-placement-rightTop .rc-tooltip-arrow,
+    .rc-tooltip-placement-rightBottom .rc-tooltip-arrow {
+      left: -5px;
+      margin-top: -6px;
+      border-width: 6px 6px 6px 0;
+      border-right-color: #b1b1b1;
+    }
+
+    .rc-tooltip-placement-right .rc-tooltip-arrow-inner,
+    .rc-tooltip-placement-rightTop .rc-tooltip-arrow-inner,
+    .rc-tooltip-placement-rightBottom .rc-tooltip-arrow-inner {
+      left: 1px;
+      margin-top: -6px;
+      border-width: 6px 6px 6px 0;
+      border-right-color: #ffffff;
+    }
+
+    .rc-tooltip-placement-right .rc-tooltip-arrow {
+      top: 50%;
+    }
+
+    .rc-tooltip-placement-rightTop .rc-tooltip-arrow {
+      top: 15%;
+      margin-top: 0;
+    }
+
+    .rc-tooltip-placement-rightBottom .rc-tooltip-arrow {
+      bottom: 15%;
+    }
+
+    .rc-tooltip-placement-left .rc-tooltip-arrow,
+    .rc-tooltip-placement-leftTop .rc-tooltip-arrow,
+    .rc-tooltip-placement-leftBottom .rc-tooltip-arrow {
+      right: -5px;
+      margin-top: -6px;
+      border-width: 6px 0 6px 6px;
+      border-left-color: #b1b1b1;
+    }
+
+    .rc-tooltip-placement-left .rc-tooltip-arrow-inner,
+    .rc-tooltip-placement-leftTop .rc-tooltip-arrow-inner,
+    .rc-tooltip-placement-leftBottom .rc-tooltip-arrow-inner {
+      right: 1px;
+      margin-top: -6px;
+      border-width: 6px 0 6px 6px;
+      border-left-color: #ffffff;
+    }
+
+    .rc-tooltip-placement-left .rc-tooltip-arrow {
+      top: 50%;
+    }
+
+    .rc-tooltip-placement-leftTop .rc-tooltip-arrow {
+      top: 15%;
+      margin-top: 0;
+    }
+
+    .rc-tooltip-placement-leftBottom .rc-tooltip-arrow {
+      bottom: 15%;
+    }
+
+    .rc-tooltip-placement-bottom .rc-tooltip-arrow,
+    .rc-tooltip-placement-bottomLeft .rc-tooltip-arrow,
+    .rc-tooltip-placement-bottomRight .rc-tooltip-arrow {
+      top: -5px;
+      margin-left: -6px;
+      border-width: 0 6px 6px;
+      border-bottom-color: #b1b1b1;
+    }
+
+    .rc-tooltip-placement-bottom .rc-tooltip-arrow-inner,
+    .rc-tooltip-placement-bottomLeft .rc-tooltip-arrow-inner,
+    .rc-tooltip-placement-bottomRight .rc-tooltip-arrow-inner {
+      top: 1px;
+      margin-left: -6px;
+      border-width: 0 6px 6px;
+      border-bottom-color: #ffffff;
+    }
+
+    .rc-tooltip-placement-bottom .rc-tooltip-arrow {
+      left: 50%;
+    }
+
+    .rc-tooltip-placement-bottomLeft .rc-tooltip-arrow {
+      left: 15%;
+    }
+
+    .rc-tooltip-placement-bottomRight .rc-tooltip-arrow {
+      right: 15%;
+    }
+
+    /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uLy4uLy4uL25vZGVfbW9kdWxlcy9yYy10b29sdGlwL2Fzc2V0cy9ib290c3RyYXBfd2hpdGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztFQUVFLGNBQWM7QUFDaEI7QUFDQTs7RUFFRSxVQUFVO0VBQ1Ysd0JBQXdCO0VBQ3hCLHlCQUF5QjtFQUN6QiwrREFBK0Q7RUFDL0QsNEJBQTRCO0FBQzlCO0FBQ0E7RUFDRSx3QkFBd0I7RUFDeEIseUJBQXlCO0VBQ3pCLDhEQUE4RDtFQUM5RCw0QkFBNEI7QUFDOUI7QUFDQTs7RUFFRSwrQkFBK0I7RUFDL0IsNkJBQTZCO0FBQy9CO0FBQ0E7RUFDRSxnQ0FBZ0M7RUFDaEMsNkJBQTZCO0FBQy9CO0FBQ0E7RUFDRTtJQUNFLFVBQVU7SUFDVix5QkFBeUI7SUFDekIsc0JBQXNCO0VBQ3hCO0VBQ0E7SUFDRSxVQUFVO0lBQ1YseUJBQXlCO0lBQ3pCLHNCQUFzQjtFQUN4QjtBQUNGO0FBQ0E7RUFDRTtJQUNFLFVBQVU7SUFDVix5QkFBeUI7SUFDekIsc0JBQXNCO0VBQ3hCO0VBQ0E7SUFDRSxVQUFVO0lBQ1YseUJBQXlCO0lBQ3pCLHNCQUFzQjtFQUN4QjtBQUNGO0FBQ0E7RUFDRSxrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLGNBQWM7RUFDZCxtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixxQ0FBcUM7RUFDckMsWUFBWTtFQUNaLFlBQVk7QUFDZDtBQUNBO0VBQ0UsYUFBYTtBQUNmO0FBQ0E7RUFDRSxpQkFBaUI7RUFDakIsY0FBYztFQUNkLGdCQUFnQjtFQUNoQixxQkFBcUI7RUFDckIseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIseUJBQXlCO0FBQzNCO0FBQ0E7O0VBRUUsa0JBQWtCO0VBQ2xCLFFBQVE7RUFDUixTQUFTO0VBQ1QseUJBQXlCO0VBQ3pCLG1CQUFtQjtBQUNyQjtBQUNBOzs7RUFHRSxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLHVCQUF1QjtFQUN2Qix5QkFBeUI7QUFDM0I7QUFDQTs7O0VBR0UsV0FBVztFQUNYLGlCQUFpQjtFQUNqQix1QkFBdUI7RUFDdkIseUJBQXlCO0FBQzNCO0FBQ0E7RUFDRSxTQUFTO0FBQ1g7QUFDQTtFQUNFLFNBQVM7QUFDWDtBQUNBO0VBQ0UsVUFBVTtBQUNaO0FBQ0E7OztFQUdFLFVBQVU7RUFDVixnQkFBZ0I7RUFDaEIsMkJBQTJCO0VBQzNCLDJCQUEyQjtBQUM3QjtBQUNBOzs7RUFHRSxTQUFTO0VBQ1QsZ0JBQWdCO0VBQ2hCLDJCQUEyQjtFQUMzQiwyQkFBMkI7QUFDN0I7QUFDQTtFQUNFLFFBQVE7QUFDVjtBQUNBO0VBQ0UsUUFBUTtFQUNSLGFBQWE7QUFDZjtBQUNBO0VBQ0UsV0FBVztBQUNiO0FBQ0E7OztFQUdFLFdBQVc7RUFDWCxnQkFBZ0I7RUFDaEIsMkJBQTJCO0VBQzNCLDBCQUEwQjtBQUM1QjtBQUNBOzs7RUFHRSxVQUFVO0VBQ1YsZ0JBQWdCO0VBQ2hCLDJCQUEyQjtFQUMzQiwwQkFBMEI7QUFDNUI7QUFDQTtFQUNFLFFBQVE7QUFDVjtBQUNBO0VBQ0UsUUFBUTtFQUNSLGFBQWE7QUFDZjtBQUNBO0VBQ0UsV0FBVztBQUNiO0FBQ0E7OztFQUdFLFNBQVM7RUFDVCxpQkFBaUI7RUFDakIsdUJBQXVCO0VBQ3ZCLDRCQUE0QjtBQUM5QjtBQUNBOzs7RUFHRSxRQUFRO0VBQ1IsaUJBQWlCO0VBQ2pCLHVCQUF1QjtFQUN2Qiw0QkFBNEI7QUFDOUI7QUFDQTtFQUNFLFNBQVM7QUFDWDtBQUNBO0VBQ0UsU0FBUztBQUNYO0FBQ0E7RUFDRSxVQUFVO0FBQ1oiLCJzb3VyY2VzQ29udGVudCI6WyIucmMtdG9vbHRpcC5yYy10b29sdGlwLXpvb20tZW50ZXIsXG4ucmMtdG9vbHRpcC5yYy10b29sdGlwLXpvb20tbGVhdmUge1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5yYy10b29sdGlwLXpvb20tZW50ZXIsXG4ucmMtdG9vbHRpcC16b29tLWFwcGVhciB7XG4gIG9wYWNpdHk6IDA7XG4gIGFuaW1hdGlvbi1kdXJhdGlvbjogMC4zcztcbiAgYW5pbWF0aW9uLWZpbGwtbW9kZTogYm90aDtcbiAgYW5pbWF0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuMTgsIDAuODksIDAuMzIsIDEuMjgpO1xuICBhbmltYXRpb24tcGxheS1zdGF0ZTogcGF1c2VkO1xufVxuLnJjLXRvb2x0aXAtem9vbS1sZWF2ZSB7XG4gIGFuaW1hdGlvbi1kdXJhdGlvbjogMC4zcztcbiAgYW5pbWF0aW9uLWZpbGwtbW9kZTogYm90aDtcbiAgYW5pbWF0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuNiwgLTAuMywgMC43NCwgMC4wNSk7XG4gIGFuaW1hdGlvbi1wbGF5LXN0YXRlOiBwYXVzZWQ7XG59XG4ucmMtdG9vbHRpcC16b29tLWVudGVyLnJjLXRvb2x0aXAtem9vbS1lbnRlci1hY3RpdmUsXG4ucmMtdG9vbHRpcC16b29tLWFwcGVhci5yYy10b29sdGlwLXpvb20tYXBwZWFyLWFjdGl2ZSB7XG4gIGFuaW1hdGlvbi1uYW1lOiByY1Rvb2xUaXBab29tSW47XG4gIGFuaW1hdGlvbi1wbGF5LXN0YXRlOiBydW5uaW5nO1xufVxuLnJjLXRvb2x0aXAtem9vbS1sZWF2ZS5yYy10b29sdGlwLXpvb20tbGVhdmUtYWN0aXZlIHtcbiAgYW5pbWF0aW9uLW5hbWU6IHJjVG9vbFRpcFpvb21PdXQ7XG4gIGFuaW1hdGlvbi1wbGF5LXN0YXRlOiBydW5uaW5nO1xufVxuQGtleWZyYW1lcyByY1Rvb2xUaXBab29tSW4ge1xuICAwJSB7XG4gICAgb3BhY2l0eTogMDtcbiAgICB0cmFuc2Zvcm0tb3JpZ2luOiA1MCUgNTAlO1xuICAgIHRyYW5zZm9ybTogc2NhbGUoMCwgMCk7XG4gIH1cbiAgMTAwJSB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2Zvcm0tb3JpZ2luOiA1MCUgNTAlO1xuICAgIHRyYW5zZm9ybTogc2NhbGUoMSwgMSk7XG4gIH1cbn1cbkBrZXlmcmFtZXMgcmNUb29sVGlwWm9vbU91dCB7XG4gIDAlIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zZm9ybS1vcmlnaW46IDUwJSA1MCU7XG4gICAgdHJhbnNmb3JtOiBzY2FsZSgxLCAxKTtcbiAgfVxuICAxMDAlIHtcbiAgICBvcGFjaXR5OiAwO1xuICAgIHRyYW5zZm9ybS1vcmlnaW46IDUwJSA1MCU7XG4gICAgdHJhbnNmb3JtOiBzY2FsZSgwLCAwKTtcbiAgfVxufVxuLnJjLXRvb2x0aXAge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHotaW5kZXg6IDEwNzA7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xuICBsaW5lLWhlaWdodDogMS41O1xuICBmb250LXNpemU6IDEycHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMC4wNSk7XG4gIHBhZGRpbmc6IDFweDtcbiAgb3BhY2l0eTogMC45O1xufVxuLnJjLXRvb2x0aXAtaGlkZGVuIHtcbiAgZGlzcGxheTogbm9uZTtcbn1cbi5yYy10b29sdGlwLWlubmVyIHtcbiAgcGFkZGluZzogOHB4IDEwcHg7XG4gIGNvbG9yOiAjMzMzMzMzO1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgbWluLWhlaWdodDogMzRweDtcbiAgYm9yZGVyOiAxcHggc29saWQgI2IxYjFiMTtcbn1cbi5yYy10b29sdGlwLWFycm93LFxuLnJjLXRvb2x0aXAtYXJyb3ctaW5uZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHdpZHRoOiAwO1xuICBoZWlnaHQ6IDA7XG4gIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIGJvcmRlci1zdHlsZTogc29saWQ7XG59XG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtdG9wIC5yYy10b29sdGlwLWFycm93LFxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LXRvcExlZnQgLnJjLXRvb2x0aXAtYXJyb3csXG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtdG9wUmlnaHQgLnJjLXRvb2x0aXAtYXJyb3cge1xuICBib3R0b206IC01cHg7XG4gIG1hcmdpbi1sZWZ0OiAtNnB4O1xuICBib3JkZXItd2lkdGg6IDZweCA2cHggMDtcbiAgYm9yZGVyLXRvcC1jb2xvcjogI2IxYjFiMTtcbn1cbi5yYy10b29sdGlwLXBsYWNlbWVudC10b3AgLnJjLXRvb2x0aXAtYXJyb3ctaW5uZXIsXG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtdG9wTGVmdCAucmMtdG9vbHRpcC1hcnJvdy1pbm5lcixcbi5yYy10b29sdGlwLXBsYWNlbWVudC10b3BSaWdodCAucmMtdG9vbHRpcC1hcnJvdy1pbm5lciB7XG4gIGJvdHRvbTogMXB4O1xuICBtYXJnaW4tbGVmdDogLTZweDtcbiAgYm9yZGVyLXdpZHRoOiA2cHggNnB4IDA7XG4gIGJvcmRlci10b3AtY29sb3I6ICNmZmZmZmY7XG59XG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtdG9wIC5yYy10b29sdGlwLWFycm93IHtcbiAgbGVmdDogNTAlO1xufVxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LXRvcExlZnQgLnJjLXRvb2x0aXAtYXJyb3cge1xuICBsZWZ0OiAxNSU7XG59XG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtdG9wUmlnaHQgLnJjLXRvb2x0aXAtYXJyb3cge1xuICByaWdodDogMTUlO1xufVxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LXJpZ2h0IC5yYy10b29sdGlwLWFycm93LFxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LXJpZ2h0VG9wIC5yYy10b29sdGlwLWFycm93LFxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LXJpZ2h0Qm90dG9tIC5yYy10b29sdGlwLWFycm93IHtcbiAgbGVmdDogLTVweDtcbiAgbWFyZ2luLXRvcDogLTZweDtcbiAgYm9yZGVyLXdpZHRoOiA2cHggNnB4IDZweCAwO1xuICBib3JkZXItcmlnaHQtY29sb3I6ICNiMWIxYjE7XG59XG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtcmlnaHQgLnJjLXRvb2x0aXAtYXJyb3ctaW5uZXIsXG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtcmlnaHRUb3AgLnJjLXRvb2x0aXAtYXJyb3ctaW5uZXIsXG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtcmlnaHRCb3R0b20gLnJjLXRvb2x0aXAtYXJyb3ctaW5uZXIge1xuICBsZWZ0OiAxcHg7XG4gIG1hcmdpbi10b3A6IC02cHg7XG4gIGJvcmRlci13aWR0aDogNnB4IDZweCA2cHggMDtcbiAgYm9yZGVyLXJpZ2h0LWNvbG9yOiAjZmZmZmZmO1xufVxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LXJpZ2h0IC5yYy10b29sdGlwLWFycm93IHtcbiAgdG9wOiA1MCU7XG59XG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtcmlnaHRUb3AgLnJjLXRvb2x0aXAtYXJyb3cge1xuICB0b3A6IDE1JTtcbiAgbWFyZ2luLXRvcDogMDtcbn1cbi5yYy10b29sdGlwLXBsYWNlbWVudC1yaWdodEJvdHRvbSAucmMtdG9vbHRpcC1hcnJvdyB7XG4gIGJvdHRvbTogMTUlO1xufVxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LWxlZnQgLnJjLXRvb2x0aXAtYXJyb3csXG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtbGVmdFRvcCAucmMtdG9vbHRpcC1hcnJvdyxcbi5yYy10b29sdGlwLXBsYWNlbWVudC1sZWZ0Qm90dG9tIC5yYy10b29sdGlwLWFycm93IHtcbiAgcmlnaHQ6IC01cHg7XG4gIG1hcmdpbi10b3A6IC02cHg7XG4gIGJvcmRlci13aWR0aDogNnB4IDAgNnB4IDZweDtcbiAgYm9yZGVyLWxlZnQtY29sb3I6ICNiMWIxYjE7XG59XG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtbGVmdCAucmMtdG9vbHRpcC1hcnJvdy1pbm5lcixcbi5yYy10b29sdGlwLXBsYWNlbWVudC1sZWZ0VG9wIC5yYy10b29sdGlwLWFycm93LWlubmVyLFxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LWxlZnRCb3R0b20gLnJjLXRvb2x0aXAtYXJyb3ctaW5uZXIge1xuICByaWdodDogMXB4O1xuICBtYXJnaW4tdG9wOiAtNnB4O1xuICBib3JkZXItd2lkdGg6IDZweCAwIDZweCA2cHg7XG4gIGJvcmRlci1sZWZ0LWNvbG9yOiAjZmZmZmZmO1xufVxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LWxlZnQgLnJjLXRvb2x0aXAtYXJyb3cge1xuICB0b3A6IDUwJTtcbn1cbi5yYy10b29sdGlwLXBsYWNlbWVudC1sZWZ0VG9wIC5yYy10b29sdGlwLWFycm93IHtcbiAgdG9wOiAxNSU7XG4gIG1hcmdpbi10b3A6IDA7XG59XG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtbGVmdEJvdHRvbSAucmMtdG9vbHRpcC1hcnJvdyB7XG4gIGJvdHRvbTogMTUlO1xufVxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LWJvdHRvbSAucmMtdG9vbHRpcC1hcnJvdyxcbi5yYy10b29sdGlwLXBsYWNlbWVudC1ib3R0b21MZWZ0IC5yYy10b29sdGlwLWFycm93LFxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LWJvdHRvbVJpZ2h0IC5yYy10b29sdGlwLWFycm93IHtcbiAgdG9wOiAtNXB4O1xuICBtYXJnaW4tbGVmdDogLTZweDtcbiAgYm9yZGVyLXdpZHRoOiAwIDZweCA2cHg7XG4gIGJvcmRlci1ib3R0b20tY29sb3I6ICNiMWIxYjE7XG59XG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtYm90dG9tIC5yYy10b29sdGlwLWFycm93LWlubmVyLFxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LWJvdHRvbUxlZnQgLnJjLXRvb2x0aXAtYXJyb3ctaW5uZXIsXG4ucmMtdG9vbHRpcC1wbGFjZW1lbnQtYm90dG9tUmlnaHQgLnJjLXRvb2x0aXAtYXJyb3ctaW5uZXIge1xuICB0b3A6IDFweDtcbiAgbWFyZ2luLWxlZnQ6IC02cHg7XG4gIGJvcmRlci13aWR0aDogMCA2cHggNnB4O1xuICBib3JkZXItYm90dG9tLWNvbG9yOiAjZmZmZmZmO1xufVxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LWJvdHRvbSAucmMtdG9vbHRpcC1hcnJvdyB7XG4gIGxlZnQ6IDUwJTtcbn1cbi5yYy10b29sdGlwLXBsYWNlbWVudC1ib3R0b21MZWZ0IC5yYy10b29sdGlwLWFycm93IHtcbiAgbGVmdDogMTUlO1xufVxuLnJjLXRvb2x0aXAtcGxhY2VtZW50LWJvdHRvbVJpZ2h0IC5yYy10b29sdGlwLWFycm93IHtcbiAgcmlnaHQ6IDE1JTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */
+  </style>
+  <link rel="canonical" href="https://bourse.paleo.ch/content?lang=de" data-react-helmet="true">
+</head>
+
+<body>
+  <a href="hidden/restricted" class="hidden accessibility-visually-hidden" style="display: none"></a>
+
+  <noscript>If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>,
+    please <strong>enable JS</strong> to make this app work.</noscript>
+  <div id="root">
+    <div class="tracked-usage">
+      <div class="sc-dnqmqq stx-ThemeSelector-Container cYeNPO">
+        <div class="sc-cnTzU stx-TicketShopWidget fzYDIJ">
+          <header class="sc-fdQOMr stx-Header icvWUn"><a class="sc-dYzWWc stx-skip-link mbfJn" href="/">Skip to
+              content</a>
+            <div class="sc-fAJaQT stx-HeaderInner bcWGtc">
+              <div class="sc-cNnxps stx-HeaderLeft hBFeYE">
+                <div class="sc-PLyBE jddFIR"><a class="sc-DNdyV stx-HeaderLink eZcbrB" tabindex="0" title="Menu"
+                    role="button" aria-expanded="false"><span class="sc-gZMcBi g-Icon g-Icon-menu fxgYyK"><svg
+                        fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                      </svg>
+                    </span></a></div><a class="sc-cbMPqi fXkzJQ sc-DNdyV stx-HeaderLink eZcbrB" tabindex="0"
+                  href="https://bourse.paleo.ch/content">
+                  <div class="sc-bYnzgO gmcWcB"><img alt="Zurück zur Startseite"
+                      src="https://bourse.paleo.ch/light_custom/lightTheme/logo.png"></div>
+                </a>
+              </div>
+              <div class="sc-dPPMrM stx-headerCenter kmGJYY"><a class="sc-gMcBNU stx-mobile-logo kXexPF"
+                  href="https://bourse.paleo.ch/content">
+                  <div class="sc-bYnzgO gmcWcB"><img alt="Logo"
+                      src="https://bourse.paleo.ch/light_custom/lightTheme/mobileLogo.png"></div>
+                </a></div>
+              <div class="sc-jWxkHr stx-HeaderRight eIcwNU">
+                <ul class="sc-bJTOcE stx-HeaderList kOIWDk">
+                  <li class="sc-imDfJI stx-HeaderItem yANAI">
+                    <ul class="sc-iHhHRJ bYZWbs">
+                      <li class="sc-kqlzXE stx-LanguageFlagContainer dcjCOl">
+                        <button
+                          class="stx-LanguageButton sc-bSbAYC gQrWqx sc-VigVT g-Button g-Button-small g-Button-flat g-Button-primary cDuaYX">Français</button>
+                      </li>
+                      <li class="sc-kqlzXE stx-LanguageFlagContainer dcjCOl"><button
+                          class="stx-LanguageButton sc-bSbAYC NWbld sc-VigVT g-Button g-Button-small g-Button-flat g-Button-primary cDuaYX">Deutsch</button>
+                      </li>
+                      <li class="sc-kqlzXE stx-LanguageFlagContainer dcjCOl"><button
+                          class="stx-LanguageButton sc-bSbAYC gQrWqx sc-VigVT g-Button g-Button-small g-Button-flat g-Button-primary cDuaYX">English</button>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="sc-imDfJI stx-HeaderItem yANAI"><a class="sc-DNdyV stx-HeaderLink eZcbrB" tabindex="0"
+                      href="https://bourse.paleo.ch/cart/shoppingCart?lang=de"><span><span
+                          class="stx-CartIndicator sc-jhaWeW stx-CartIcon iLttBe sc-gZMcBi g-Icon g-Icon-cart fxgYyK"
+                          aria-label="Warenkorb anzeigen"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z">
+                            </path>
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                          </svg>
+                        </span></span></a></li>
+                  <li class="sc-imDfJI stx-HeaderItem yANAI">
+                    <div class="sc-dPNhBE yfmNa"><a
+                        class="stx-SignInButton sc-hAnkBK stx-HeaderButton jLEDws sc-gqjmRU g-Button g-Button-small g-Button-flat g-Button-primary iZgwwE"
+                        href="https://bourse.paleo.ch/account/login?lang=de"><span>Anmelden</span></a></div>
+                  </li>
+                  <li class="sc-imDfJI stx-HeaderItem yANAI">
+                    <div class="sc-dPNhBE yfmNa"><a
+                        class="stx-RegisterButton sc-hAnkBK stx-HeaderButton TFeaX sc-gqjmRU g-Button g-Button-small g-Button-primary fnUtSr"
+                        href="https://bourse.paleo.ch/account/register?lang=de"><span>Registrieren</span></a></div>
+                  </li>
+                </ul>
+                <div class="stx-HeaderNavContainer sc-dPNhBE yfmNa">
+                  <nav class="sc-izvnbC kvvZNv sc-geAPOV stx-HeaderNav gvveFY">
+                    <ul class="sc-eqPNPO stx-CustomLinksContainer iWVjyT"></ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </header>
+          <h1 class="sc-jGFFOr accessibility-visually-hidden jXPdXs">Paléo Festival Nyon - Ticketing</h1>
+          <div class="py-3 sc-eQGPmX stx-TicketShopWidget-catalog iibZtu sc-dXLFzO loFUbF" id="catalog" tabindex="-1">
+            <div class="sc-cpmKsF stx-Catalog bhkWzm">
+              <div class="layout-DEFAULT sc-fgfRvd stx-Section stx-Section-bi kJHOLn">
+                <h2 class="stx-SectionHeading stx-SectionHeading-bi sc-gpHHfC bJqTMj sc-jAaTju jhtxGb"
+                  themecontext="[object Object]">Tickets</h2>
+                <div class="sc-hIVACf stx-SectionContent stx-SectionContent-bi eoOwR">
+                  <div class="showAsGrid sc-jeCdPy stx-SectionCluster gSRKUm">
+                    <div class="sc-ePZHVD stx-ProductBox dXgnGf src__Box-sc-1sbtrzs-0 dZdHHp"
+                      width="1,1,calc(100% / 3 - 0px),calc(100% / 3 - 0px)">
+                      <div class="sc-dfVpRl stx-ProductCard-10229259587704 stx-ProductCard cbWrVV">
+                        <div class="sc-iyvyFf stx-ProductCardMainContent iijwnd">
+                          <div
+                            class="sc-bYSBpT stx-SoldOutIndicator fmPzFb sc-btzYZH stx-ProductCardIndicator stx-ProductCardIndicator-10229259587704 fDXWeF"
+                            id="10229259587704"><span>Sold out</span></div>
+                          <div class="sc-fMiknA g-backdropContainer bdgICP">
+                            <div class="sc-dVhcbM g-backdrop bPBJUv"></div>
+                            <div class="sc-jwKygS stx-ProductImage stx-ProductImage-10229259587704 linCHG">
+                              <figure class="sc-kafWEX g-Figure hKCBEM">
+                                <div class="sc-cmTdod g-Image-AspectRatio uPUpb"></div>
+                                <div class="sc-feJyhm bjdRCV"><span style="font-size: 0px;"></span>
+                                  <div class="g-Figure-ImageContainer"><img style="display: none;"
+                                      src="https://s3.eu-central-2.amazonaws.com/content-paleo-prod-secutix-bcw0ozo3/images/catalog/product/large/048d3d57-a036-49f9-8382-988a9855787b.png"
+                                      alt="Dienstag 21. Juli 2026">
+                                    <div class="sc-iELTvK dFRnkd" title="" themecontext="[object Object]"
+                                      currenttheme="EQUILIBRIUM" themequeries="[object Object]"></div>
+                                  </div>
+                                </div>
+                              </figure>
+                            </div>
+                          </div>
+                          <div class="sc-fYxtnH stx-ProductCardDetails stx-ProductCardDetails-10229259587704 bdtVhD">
+                            <div>
+                              <p class="sc-gGBfsJ stx-ProductCardTitle dkAEMm" aria-hidden="true">Dienstag 21. Juli 2026
+                              </p>
+                              <div class="noTargetElement sc-bdVaJa stx-overflow-detect-wrapper bjkSFp">
+                                <div class="stx-overflow-detect">
+                                  <p
+                                    class="sc-cIShpX stx-tooltip krSiat sc-tilXH dmHZCq sc-frDJqD g-TextPreview semantic-no-styling gujXYT">
+                                    Twenty One Pilots · Lorde · Asaf Avidan · Perceval · Balu Brigada · Suzane ·
+                                    Upsilone · SKÁLD · SPRINTS · Sam Quealy · okgiorgio · Witch Club Satan · DITTER ·
+                                    Dylan Dylan · Soft Loft · Maustetytöt · Club Katel</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sc-ePZHVD stx-ProductBox dXgnGf src__Box-sc-1sbtrzs-0 dZdHHp"
+                      width="1,1,calc(100% / 3 - 0px),calc(100% / 3 - 0px)">
+                      <div class="sc-dfVpRl stx-ProductCard-10229259587712 stx-ProductCard cbWrVV">
+                        <div class="sc-iyvyFf stx-ProductCardMainContent iijwnd">
+                          <div
+                            class="sc-bYSBpT stx-SoldOutIndicator fmPzFb sc-btzYZH stx-ProductCardIndicator stx-ProductCardIndicator-10229259587712 fDXWeF"
+                            id="10229259587712"><span>Sold out</span></div>
+                          <div class="sc-fMiknA g-backdropContainer bdgICP">
+                            <div class="sc-dVhcbM g-backdrop bPBJUv"></div>
+                            <div class="sc-jwKygS stx-ProductImage stx-ProductImage-10229259587712 linCHG">
+                              <figure class="sc-kafWEX g-Figure hKCBEM">
+                                <div class="sc-cmTdod g-Image-AspectRatio uPUpb"></div>
+                                <div class="sc-feJyhm bjdRCV"><span style="font-size: 0px;"></span>
+                                  <div class="g-Figure-ImageContainer"><img style="display: none;"
+                                      src="https://s3.eu-central-2.amazonaws.com/content-paleo-prod-secutix-bcw0ozo3/images/catalog/product/large/dcddf60a-4bc0-4ebb-8656-c27a3ce8bbc5.png"
+                                      alt="Mittwoch 22 Juli 2026">
+                                    <div class="sc-iELTvK hWtReH" title="" themecontext="[object Object]"
+                                      currenttheme="EQUILIBRIUM" themequeries="[object Object]"></div>
+                                  </div>
+                                </div>
+                              </figure>
+                            </div>
+                          </div>
+                          <div class="sc-fYxtnH stx-ProductCardDetails stx-ProductCardDetails-10229259587712 bdtVhD">
+                            <div>
+                              <p class="sc-gGBfsJ stx-ProductCardTitle dkAEMm" aria-hidden="true">Mittwoch 22 Juli 2026
+                              </p>
+                              <div class="noTargetElement sc-bdVaJa stx-overflow-detect-wrapper bjkSFp">
+                                <div class="stx-overflow-detect">
+                                  <p
+                                    class="sc-cIShpX stx-tooltip krSiat sc-tilXH dmHZCq sc-frDJqD g-TextPreview semantic-no-styling gujXYT">
+                                    The Cure · Feu! Chatterton · Kompromat · The Last Dinner Party · The Young Gods ·
+                                    Eivør · Sam Sauvage · Ásgeir · Jen Cardini · Kendal · Sylvie Kreusch · Witch Club
+                                    Satan · St Graal · Zaatar · Bound By Endogamy · Max Baby · Nonante</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sc-ePZHVD stx-ProductBox dXgnGf src__Box-sc-1sbtrzs-0 dZdHHp"
+                      width="1,1,calc(100% / 3 - 0px),calc(100% / 3 - 0px)">
+                      <div class="sc-dfVpRl stx-ProductCard-10229259587720 stx-ProductCard cbWrVV">
+                        <div class="sc-iyvyFf stx-ProductCardMainContent iijwnd">
+                          <div
+                            class="sc-bYSBpT stx-SoldOutIndicator fmPzFb sc-btzYZH stx-ProductCardIndicator stx-ProductCardIndicator-10229259587720 fDXWeF"
+                            id="10229259587720"><span>Sold out</span></div>
+                          <div class="sc-fMiknA g-backdropContainer bdgICP">
+                            <div class="sc-dVhcbM g-backdrop bPBJUv"></div>
+                            <div class="sc-jwKygS stx-ProductImage stx-ProductImage-10229259587720 linCHG">
+                              <figure class="sc-kafWEX g-Figure hKCBEM">
+                                <div class="sc-cmTdod g-Image-AspectRatio uPUpb"></div>
+                                <div class="sc-feJyhm bjdRCV">
+                                  <span style="font-size: 0px;"></span>
+                                  <div class="g-Figure-ImageContainer">
+                                    <img style="display: none;"
+                                      src="https://s3.eu-central-2.amazonaws.com/content-paleo-prod-secutix-bcw0ozo3/images/catalog/product/large/79299fbe-c9c7-417f-a2e0-6af7f6bed579.png"
+                                      alt="Donnerstag 23. Juli 2026">
+                                    <div class="sc-iELTvK jYckHZ" title="" themecontext="[object Object]"
+                                      currenttheme="EQUILIBRIUM" themequeries="[object Object]"></div>
+                                  </div>
+                                </div>
+                              </figure>
+                            </div>
+                          </div>
+                          <div class="sc-fYxtnH stx-ProductCardDetails stx-ProductCardDetails-10229259587720 bdtVhD">
+                            <div>
+
+                              <p class="sc-gGBfsJ stx-ProductCardTitle dkAEMm" aria-hidden="true">Donnerstag 23. Juli
+                                2026</p>
+                              <div class="noTargetElement sc-bdVaJa stx-overflow-detect-wrapper bjkSFp">
+                                <div class="stx-overflow-detect">
+                                  <p
+                                    class="sc-cIShpX stx-tooltip krSiat sc-tilXH dmHZCq sc-frDJqD g-TextPreview semantic-no-styling gujXYT">
+                                    Gorillaz · Theodora · disiz · Amelie Lens pres. AURA · Morcheeba · Saint Levant ·
+                                    Miki · Ino Casablanca · riria · Nusantara Beat · Steve'n'Seagulls · Joshua Idehen ·
+                                    Diffrent · Hindarfjäll · Marie Jay · Antti Paalanen · Camille Doe · Braises de
+                                    Velours</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sc-ePZHVD stx-ProductBox dXgnGf src__Box-sc-1sbtrzs-0 dZdHHp"
+                      width="1,1,calc(100% / 3 - 0px),calc(100% / 3 - 0px)">
+                      <div class="sc-dfVpRl stx-ProductCard-10229259587728 stx-ProductCard cbWrVV">
+                        <div class="sc-iyvyFf stx-ProductCardMainContent iijwnd">
+                          <a class="sc-kIPQKe stx-tooltip jgMiIX sc-gzOgki kjirtU"
+                            href="https://bourse.paleo.ch/selection/resale/passItem?productId=10229259587728" style="">
+                            <h3 class="sc-eXEjpC fuVqJC" aria-live="polite" id="bi-accessibility_title_10229259587728">
+                              Freitag 24. Juli 2026</h3>
+                          </a>
+                          <div class="sc-jwKygS stx-ProductImage stx-ProductImage-10229259587728 linCHG">
+                            <figure class="sc-kafWEX g-Figure hKCBEM">
+                              <div class="sc-cmTdod g-Image-AspectRatio uPUpb"></div>
+                              <div class="sc-feJyhm bjdRCV"><span style="font-size: 0px;"></span>
+                                <div class="g-Figure-ImageContainer">
+                                  <img style="display: none;"
+                                    src="https://s3.eu-central-2.amazonaws.com/content-paleo-prod-secutix-bcw0ozo3/images/catalog/product/large/26257c5f-fb39-41e0-8989-bd0b41787069.png"
+                                    alt="Freitag 24. Juli 2026">
+                                  <div class="sc-iELTvK cMDZlN" title="" themecontext="[object Object]"
+                                    currenttheme="EQUILIBRIUM" themequeries="[object Object]"></div>
+                                </div>
+                              </div>
+                            </figure>
+                          </div>
+                          <div class="sc-fYxtnH stx-ProductCardDetails stx-ProductCardDetails-10229259587728 bdtVhD">
+                            <div>
+                              <p class="sc-gGBfsJ stx-ProductCardTitle dkAEMm" aria-hidden="true">Freitag 24. Juli 2026
+                              </p>
+                              <div class="noTargetElement sc-bdVaJa stx-overflow-detect-wrapper bjkSFp">
+                                <div class="stx-overflow-detect">
+                                  <p
+                                    class="sc-cIShpX stx-tooltip krSiat sc-tilXH dmHZCq sc-frDJqD g-TextPreview semantic-no-styling gujXYT">
+                                    Orelsan · Mosimann · Julien Clerc · Yamê · Solann · Björn Again · Keny Arkana ·
+                                    Roxane · Camille Yembe · Urumi · Sueilo · DJ Schnake · Eihwar · Legit Girl DJ ·
+                                    Nashwa · Värttinä · Estelle Zamme · Katarina Barruk</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="sc-cHGsZl stx-ProductActions stx-ProductActions-10229259587728 kMgqDP">
+                          <div class="sc-kgAjT stx-ProductActions-BoxWrapper cIoXph">
+                            <a class="sc-TOsTZ hpuSTz sc-gqjmRU g-Button g-Button-primary jhRoOj"
+                              href="https://bourse.paleo.ch/selection/resale/passItem?productId=10229259587728"
+                              aria-label="Kaufen Freitag 24. Juli 2026"><span>Kaufen</span></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sc-ePZHVD stx-ProductBox dXgnGf src__Box-sc-1sbtrzs-0 dZdHHp"
+                      width="1,1,calc(100% / 3 - 0px),calc(100% / 3 - 0px)">
+                      <div class="sc-dfVpRl stx-ProductCard-10229259587736 stx-ProductCard cbWrVV">
+                        <div class="sc-iyvyFf stx-ProductCardMainContent iijwnd">
+                          <div
+                            class="sc-elJkPf stx-ComingSoonIndicator jRsZyA sc-lhVmIH stx-AdvantageIndicator heBySu sc-btzYZH stx-ProductCardIndicator stx-ProductCardIndicator-10229259587736 fDXWeF"
+                            id="10229259587736"><span>Sold out</span></div>
+                          <div class="sc-fMiknA g-backdropContainer bdgICP">
+                            <div class="sc-dVhcbM g-backdrop bPBJUv"></div>
+                            <div class="sc-jwKygS stx-ProductImage stx-ProductImage-10229259587736 linCHG">
+                              <figure class="sc-kafWEX g-Figure hKCBEM">
+                                <div class="sc-cmTdod g-Image-AspectRatio uPUpb"></div>
+                                <div class="sc-feJyhm bjdRCV"><span style="font-size: 0px;"></span>
+                                  <div class="g-Figure-ImageContainer"><img style="display: none;"
+                                      src="https://s3.eu-central-2.amazonaws.com/content-paleo-prod-secutix-bcw0ozo3/images/catalog/product/large/087f0119-07af-46a7-a74e-fb5030cd9ec9.png"
+                                      alt="Samstag 25. Juli 2026">
+                                    <div class="sc-iELTvK BjiLT" title="" themecontext="[object Object]"
+                                      currenttheme="EQUILIBRIUM" themequeries="[object Object]"></div>
+                                  </div>
+                                </div>
+                              </figure>
+                            </div>
+                          </div>
+                          <div class="sc-fYxtnH stx-ProductCardDetails stx-ProductCardDetails-10229259587736 bdtVhD">
+                            <div>
+                              <p class="sc-gGBfsJ stx-ProductCardTitle dkAEMm" aria-hidden="true">Samstag 25. Juli 2026
+                              </p>
+                              <div class="noTargetElement sc-bdVaJa stx-overflow-detect-wrapper bjkSFp">
+                                <div class="stx-overflow-detect">
+                                  <p
+                                    class="sc-cIShpX stx-tooltip krSiat sc-tilXH dmHZCq sc-frDJqD g-TextPreview semantic-no-styling gujXYT">
+                                    Katy Perry · Vald x Vladimir Cauchemar x Todiefor · Jok’Air · Vanessa Paradis ·
+                                    Helena · Adèle Castillon · marguerite · Kabylie Minogue · La Valentina · LinaPary ·
+                                    Dope Saint Jude · LinLin · ETO · Deize Tigrona &amp; Doucesoeur · Marara Kelly ·
+                                    Tarrak · Trolska Polska · Teksti-TV 666</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sc-ePZHVD stx-ProductBox dXgnGf src__Box-sc-1sbtrzs-0 dZdHHp"
+                      width="1,1,calc(100% / 3 - 0px),calc(100% / 3 - 0px)">
+                      <div class="sc-dfVpRl stx-ProductCard-10229259587744 stx-ProductCard cbWrVV">
+                        <div class="sc-iyvyFf stx-ProductCardMainContent iijwnd">
+                          <div
+                            class="sc-bYSBpT stx-SoldOutIndicator fmPzFb sc-btzYZH stx-ProductCardIndicator stx-ProductCardIndicator-10229259587744 fDXWeF"
+                            id="10229259587744"><span>Sold out</span></div>
+                          <div class="sc-fMiknA g-backdropContainer bdgICP">
+                            <div class="sc-dVhcbM g-backdrop bPBJUv"></div>
+                            <div class="sc-jwKygS stx-ProductImage stx-ProductImage-10229259587744 linCHG">
+                              <figure class="sc-kafWEX g-Figure hKCBEM">
+                                <div class="sc-cmTdod g-Image-AspectRatio uPUpb"></div>
+                                <div class="sc-feJyhm bjdRCV"><span style="font-size: 0px;"></span>
+                                  <div class="g-Figure-ImageContainer"><img style="display: none;"
+                                      src="https://s3.eu-central-2.amazonaws.com/content-paleo-prod-secutix-bcw0ozo3/images/catalog/product/large/f2d5274a-4914-4ad2-9791-153aa411533e.png"
+                                      alt="Sonntag 26. Juli 2026">
+                                    <div class="sc-iELTvK grXRpd" title="" themecontext="[object Object]"
+                                      currenttheme="EQUILIBRIUM" themequeries="[object Object]"></div>
+                                  </div>
+                                </div>
+                              </figure>
+                            </div>
+                          </div>
+                          <div class="sc-fYxtnH stx-ProductCardDetails stx-ProductCardDetails-10229259587744 bdtVhD">
+                            <div>
+                              <p class="sc-gGBfsJ stx-ProductCardTitle dkAEMm" aria-hidden="true">Sonntag 26. Juli 2026
+                              </p>
+                              <div class="noTargetElement sc-bdVaJa stx-overflow-detect-wrapper bjkSFp">
+                                <div class="stx-overflow-detect">
+                                  <p
+                                    class="sc-cIShpX stx-tooltip krSiat sc-tilXH dmHZCq sc-frDJqD g-TextPreview semantic-no-styling gujXYT">
+                                    GIMS · TIMMY TRUMPET · ZAZ · BOB SINCLAR · LUIZA · Roni Size · THK · Ensemble Vocal
+                                    Utopie – Carmina Burana · Xana Romeo · Little Lion Sound &amp; Basta Lion · Omega
+                                    Nebula · Esaïa · Open Season · Trolska Polska · Tuuletar · Hialøsa</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sc-kQsIoO stx-Catalog-seeAllButton dsQZKM"><a
+                  class="sc-gqjmRU g-Button g-Button-primary jhRoOj" href="https://bourse.paleo.ch/list/events?lang=de"
+                  aria-label="Alle Produkte anzeigen"><span>Mehr</span></a></div>
+            </div>
+          </div>
+          <footer class="sc-bEufUU stx-tsFooter hxcLWH">
+            <div class="sc-gFXMyG stx-footerWrapper lccJQA">
+              <p class="sc-bTiqRo fDvjtK">© 2026 SecuTix</p>
+              <ul class="sc-gQNndl stx-tsFooterInner caiass">
+                <li class="sc-MYvYT stx-tsFooterLinkWrapper jOYWzY"><a
+                    class="sc-RmnOB stx-tsFooterLink kuWrsL sc-fCPvlr g-Link hoKGsz" href="https://www.secutix.com"
+                    target="_blank"><span>Erstellt von SecuTix</span></a></li>
+                <li class="sc-MYvYT stx-tsFooterLinkWrapper jOYWzY"><a
+                    class="sc-RmnOB stx-tsFooterLink kuWrsL sc-fCPvlr g-Link hoKGsz"
+                    href="https://bourse.paleo.ch/sitemap" target="_blank"><span>Seitenverzeichnis</span></a></li>
+                <li class="sc-MYvYT stx-tsFooterLinkWrapper jOYWzY"><a
+                    class="sc-RmnOB stx-tsFooterLink kuWrsL sc-fCPvlr g-Link hoKGsz"
+                    href="http://yeah.paleo.ch/de/conditions-generales" target="_blank"><span>Allgemeine
+                      Geschäftsbedingungen</span></a></li>
+                <li class="sc-MYvYT stx-tsFooterLinkWrapper jOYWzY"><a
+                    class="sc-RmnOB stx-tsFooterLink kuWrsL sc-fCPvlr g-Link hoKGsz"
+                    href="https://yeah.paleo.ch/de/politique-de-confidentialite"
+                    target="_blank"><span>Datenschutzrichtlinien</span></a></li>
+                <li class="sc-MYvYT stx-tsFooterLinkWrapper jOYWzY"><a
+                    class="sc-RmnOB stx-tsFooterLink kuWrsL sc-fCPvlr g-Link hoKGsz"
+                    href="http://yeah.paleo.ch/fr/marche-noir" target="_blank"><span>FAQ</span></a></li>
+              </ul>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script
+    type="application/javascript">window.secutix = window.secutix || {}; secutix.__APP__ = { "session": { "csrfToken": "dea3d5a8-e6f2-4f93-8f62-b6e5d038d6ec" }, "style": { "properties": { "faviconUrl": "https://bourse.paleo.ch/light_custom/lightTheme/favicon.png", "bodyBgImage": "url('https://bourse.paleo.ch/light_custom/lightTheme/bodyOuterLogo.jpeg') no-repeat center top;\n", "headerBgColor": "transparent", "headerTextColor": "#000000", "footerBgColor": "transparent", "footerTextColor": "#000000", "buttonBgColorTop": "#FF4747", "buttonBgColorBottom": "#D5D5D5", "messageTextColor": "#000000", "messageBgColor": "#FFFFFF", "messageUseIcon": false, "messageInfoTitleColor": "#534BFE", "messageSuccessTitleColor": "#339D33", "messageWarningTitleColor": "#FF4747", "messageErrorTitleColor": "#FF4747", "boxBorderRadius": "8px", "mobileRelativeBoxBorderRadius": "8px", "buttonBorderRadius": "8px", "boxTitleMode": "BLOCK", "boxTitleBgTop": "#D5D5D5", "boxTitleTextColor": "#000000", "boxTitleTextAlign": "left", "boxTitleUnderlinePadding": "2px", "altBoxTitleTextAlign": "left", "altBoxTitleUnderlinePadding": "2px", "altBoxTitleBgTop": "#FFFFFF", "altBoxTitleBgBottom": "#FFFFFF", "altBoxTitleTextColor": "#000000", "buttonTextColor": "#FFFFFF", "secondaryContentFloat": "right", "boxBgColor": "#F6F6F6", "innerBoxBgColor": "#F6F6F6", "boxTitleTextTransform": "uppercase", "boxTitleTextSize": "1.5em", "boxTitleTextWeight": "normal", "textColor": "#000000", "linkTextColor": "#FF4747", "productNameTextColor": "#000000", "mobileMenuBgColor": "#FFFFFF", "mobileMenuTextColor": "#000000", "headerLogo": "url('logo.png') no-repeat", "headerLogoUrl": "https://bourse.paleo.ch/light_custom/lightTheme/logo.png", "headerLogoWidth": "350px", "headerLogoHeight": "79px", "headerMobileLogo": "url('mobileLogo.png') no-repeat", "headerMobileLogoUrl": "https://bourse.paleo.ch/light_custom/lightTheme/mobileLogo.png", "headerMobileLogoWidth": "150px", "advantageColor": "#FF4747", "advantageTextColor": "#FFFFFF", "languageStyle": "text", "stretchBgFullWidth": false, "hasCustomHeader": false, "hasCustomFooter": false, "font": { "family": "Lato", "provider": "GOOGLE", "isGlobal": true }, "hasCustomFont": true, "theme": "EQUILIBRIUM", "ts15Variables": "{}" } }, "config": { "baseUrl": "https://bourse.paleo.ch/", "restApiUrl": "https://bourse.paleo.ch/tnwr/v1", "publicPath": "https://stx-gravity-p13-widgets.quantum.secutix.com/stx-widgets/v2/Widgets.js", "allowedChars": "^[a-zA-Z0-9À-ÏÑ-Ýß-ïÑ-üÿ\\&'@.\\-\\/:+=_ \\(\\),ªº]{0,256}$", "pageTitle": { "de": "Paléo Festival Nyon - Ticketing", "en": "Paléo Festival Nyon - Ticketing", "fr": "Paléo Festival Nyon - Billetterie" }, "pageDescription": { "de": "Kaufen Sie Ihre Tickets online für Paléo Festival Nyon", "en": "Buy your tickets online for Paléo Festival Nyon", "fr": "Achetez vos billets en ligne pour Paléo Festival Nyon" }, "organizationName": { "fr": "Paléo Festival Nyon" }, "institutionCode": "PALEO", "organizationCode": "PALEO", "salesChannelCode": "bours", "pointOfSalesCode": "boursene", "timeZoneOffset": 7200000, "privacyStatementURL": "https://yeah.paleo.ch/{LANGUAGE}/politique-de-confidentialite", "generalConditionsURL": "http://yeah.paleo.ch/{LANGUAGE}/conditions-generales", "privacyPolicyURL": "https://yeah.paleo.ch/{LANGUAGE}/politique-de-confidentialite", "helpURL": "http://yeah.paleo.ch/fr/marche-noir", "continueShoppingURL": "https://bourse.paleo.ch/content", "address": { "addressLines": ["Rte de St-Cergue 312", null, null], "zipCode": "1260", "place": "Nyon", "countryCode": "CH", "email": "tickets@paleo.ch", "gpsLatitude": "46.4023617", "gpsLongitude": "6.21160869999999" }, "pointOfSalesType": "C2C", "isPointOfSalesRunning": true, "currentLanguage": "de", "institutionLanguage": "fr", "languages": ["fr", "de", "en"], "paymentTypes": ["VISA", "MASTERCARD", "TWINT", "APPLEPAY", "GOOGLE_PAY"], "currencyCode": "CHF", "paymentMethods": [{ "id": 101438350000, "code": "CB_VISA", "internetCode": "VISA", "paymentType": "CB" }, { "id": 101438349999, "code": "CB_MC", "internetCode": "MASTERCARD", "paymentType": "CB" }, { "id": 16369, "code": "Guthaben", "paymentType": "AVR" }, { "id": 113423102, "code": "BankUber", "paymentType": "VIR" }, { "id": 101456416071, "code": "Twint", "internetCode": "TWINT", "paymentType": "CB" }, { "id": 10229225115186, "code": "ApplePay", "internetCode": "APPLEPAY", "paymentType": "CB" }, { "id": 10229224017316, "code": "GPAY", "internetCode": "GOOGLE_PAY", "paymentType": "CB" }], "shipmentModes": [{ "id": 101449265777, "type": "BLOCKCHAIN", "hasCollectionDate": false }], "seasonHighlighted": false, "recaptchaSiteKey": "6Lfzaj0UAAAAAB7_YLkkw05u0qz4OU5UA6vne_G8", "hasActivePartnerAdvantages": false, "isEmbedded": false, "customLinks": [], "pspParameters": {}, "showSubscriptionsLink": false, "purchaseOnBehalfEnabled": false, "showCommunityTicketsLink": false, "waitingListEnabled": false, "guestLoginEnabled": false, "cachedCatalogEnabled": false, "countries": [{ "code": "AD", "name": { "de": "Andorra", "en": "Andorra", "fr": "Andorre" } }, { "code": "AE", "name": { "de": "Vereinigte Arabische Emirate", "en": "United Arab Emirates", "fr": "Émirats Arabes Unis" } }, { "code": "AF", "name": { "de": "Afghanistan", "en": "Afghanistan", "fr": "Afghanistan" } }, { "code": "AG", "name": { "de": "Antigua und Barbuda", "en": "Antigua and Barbuda", "fr": "Antigua et Barbuda" } }, { "code": "AI", "name": { "de": "Anguilla", "en": "Anguilla", "fr": "Anguilla" } }, { "code": "AL", "name": { "de": "Albanien", "en": "Albania", "fr": "Albanie" } }, { "code": "AM", "name": { "de": "Armenien", "en": "Armenia", "fr": "Arménie" } }, { "code": "AO", "name": { "de": "Angola", "en": "Angola", "fr": "Angola" } }, { "code": "AQ", "name": { "de": "Antarktis", "en": "Antarctica", "fr": "Antarctique" } }, { "code": "AR", "name": { "de": "Argentinien", "en": "Argentina", "fr": "Argentine" } }, { "code": "AS", "name": { "de": "Amerikanisch Samoa", "en": "American Samoa", "fr": "Samoa Américaines" } }, { "code": "AT", "name": { "de": "Österreich", "en": "Austria", "fr": "Autriche" } }, { "code": "AU", "name": { "de": "Australien", "en": "Australia", "fr": "Australie" } }, { "code": "AW", "name": { "de": "Aruba", "en": "Aruba", "fr": "Aruba" } }, { "code": "AX", "name": { "de": "Åland Inseln", "en": "Åland islands", "fr": "Îles Åland" } }, { "code": "AZ", "name": { "de": "Aserbaidschan", "en": "Azerbaijan", "fr": "Azerbaidjan" } }, { "code": "BA", "name": { "de": "Bosnien Herzegowina", "en": "Bosnia-Herzegovinia", "fr": "Bosnie Herzégovine" } }, { "code": "BB", "name": { "de": "Barbados", "en": "Barbados", "fr": "Barbades" } }, { "code": "BD", "name": { "de": "Bangladesh", "en": "Bangladesh", "fr": "Bangladesh" } }, { "code": "BE", "name": { "de": "Belgien", "en": "Belgium", "fr": "Belgique" } }, { "code": "BF", "name": { "de": "Burkina Faso", "en": "Burkina Faso", "fr": "Burkina Faso" } }, { "code": "BG", "name": { "de": "Bulgarien", "en": "Bulgaria", "fr": "Bulgarie" } }, { "code": "BH", "name": { "de": "Bahrain", "en": "Bahrain", "fr": "Bahrain" } }, { "code": "BI", "name": { "de": "Burundi", "en": "Burundi", "fr": "Burundi" } }, { "code": "BJ", "name": { "de": "Benin", "en": "Benin", "fr": "Bénin" } }, { "code": "BL", "name": { "de": "St. Bartholomäus", "en": "Saint Barthélemy", "fr": "Saint Barthélemy" } }, { "code": "BM", "name": { "de": "Bermuda", "en": "Bermuda", "fr": "Bermude" } }, { "code": "BN", "name": { "de": "Brunei Darussalam", "en": "Brunei Darussalam", "fr": "Brunei Darussalam" } }, { "code": "BO", "name": { "de": "Bolivien", "en": "Bolivia", "fr": "Bolivie" } }, { "code": "BQ", "name": { "de": "Bonaire, Sint Eustatius und Saba", "en": "Bonaire, Sint Eustatius and Saba", "fr": "Bonaire, Saint-Eustache et Saba" } }, { "code": "BR", "name": { "de": "Brasilien", "en": "Brazil", "fr": "Brésil" } }, { "code": "BS", "name": { "de": "Bahamas", "en": "Bahamas", "fr": "Bahamas" } }, { "code": "BT", "name": { "de": "Bhutan", "en": "Bhutan", "fr": "Bhoutan" } }, { "code": "BV", "name": { "de": "Bouvetinsel", "en": "Bouvet Island", "fr": "Île Bouvet" } }, { "code": "BW", "name": { "de": "Botswana", "en": "Botswana", "fr": "Botswana" } }, { "code": "BY", "name": { "de": "Belarus (Weissrussland)", "en": "Belarus", "fr": "Biélorussie" } }, { "code": "BZ", "name": { "de": "Belize", "en": "Belize", "fr": "Belize" } }, { "code": "CA", "name": { "de": "Kanada", "en": "Canada", "fr": "Canada" } }, { "code": "CC", "name": { "de": "Kokosinseln", "en": "Cocos (Keeling) Islands", "fr": "Îles Cocos (Keeling)" } }, { "code": "CD", "name": { "de": "Kongo, Demokratische Republik (ehem. Zaire)", "en": "Congo, The democratic Republic of the", "fr": "République du Congo" } }, { "code": "CF", "name": { "de": "Zentralafrikanische Republik", "en": "Central African Republic", "fr": "République centrafricaine" } }, { "code": "CG", "name": { "de": "Republik Kongo", "en": "Congo", "fr": "Congo" } }, { "code": "CH", "name": { "de": "Schweiz", "en": "Switzerland", "fr": "Suisse" } }, { "code": "CI", "name": { "de": "Elfenbeinküste", "en": "Ivory Coast", "fr": "Côte d'Ivoire" } }, { "code": "CK", "name": { "de": "Cookinseln", "en": "Cook Islands", "fr": "Îles Cook" } }, { "code": "CL", "name": { "de": "Chile", "en": "Chile", "fr": "Chili" } }, { "code": "CM", "name": { "de": "Kamerun", "en": "Cameroon", "fr": "Cameroun" } }, { "code": "CN", "name": { "de": "China", "en": "China", "fr": "Chine" } }, { "code": "CO", "name": { "de": "Kolumbien", "en": "Colombia", "fr": "Colombie" } }, { "code": "CR", "name": { "de": "Costa Rica", "en": "Costa Rica", "fr": "Costa Rica" } }, { "code": "CU", "name": { "de": "Kuba", "en": "Cuba", "fr": "Cuba" } }, { "code": "CV", "name": { "de": "Cap Verde", "en": "Cape Verde", "fr": "Cap Vert" } }, { "code": "CW", "name": { "de": "Curaçao", "en": "Curaçao", "fr": "Curaçao" } }, { "code": "CX", "name": { "de": "Weihnachtsinsel", "en": "Christmas Island (Indian Ocean)", "fr": "Île Christmas" } }, { "code": "CY", "name": { "de": "Zypern", "en": "Cyprus", "fr": "Chypre" } }, { "code": "CZ", "name": { "de": "Tschechische Republik", "en": "Czech Republic", "fr": "République Tchèque" } }, { "code": "DE", "name": { "de": "Deutschland", "en": "Germany", "fr": "Allemagne" } }, { "code": "DJ", "name": { "de": "Dschibuti", "en": "Djibouti", "fr": "Djibouti" } }, { "code": "DK", "name": { "de": "Dänemark", "en": "Denmark", "fr": "Danemark" } }, { "code": "DM", "name": { "de": "Dominica", "en": "Dominica (Commonwealth of)", "fr": "Dominique" } }, { "code": "DO", "name": { "de": "Dominikanische Republik", "en": "Dominican Republic", "fr": "République Dominicaine" } }, { "code": "DZ", "name": { "de": "Algerien", "en": "Algeria", "fr": "Algérie" } }, { "code": "EC", "name": { "de": "Ecuador", "en": "Ecuador", "fr": "Équateur" } }, { "code": "EE", "name": { "de": "Estland", "en": "Estonia", "fr": "Estonie" } }, { "code": "EG", "name": { "de": "Ägypten", "en": "Egypt", "fr": "Égypte" } }, { "code": "EH", "name": { "de": "Westsahara", "en": "Western Sahara", "fr": "Sahara Occidental" } }, { "code": "ER", "name": { "de": "Eritrea", "en": "Eritrea", "fr": "Érythrée" } }, { "code": "ES", "name": { "de": "Spanien", "en": "Spain", "fr": "Espagne" } }, { "code": "ET", "name": { "de": "Äthiopien", "en": "Ethiopia", "fr": "Ethiophie" } }, { "code": "FI", "name": { "de": "Finnland", "en": "Finland", "fr": "Finlande" } }, { "code": "FJ", "name": { "de": "Fidschi", "en": "Fiji", "fr": "Fiji" } }, { "code": "FK", "name": { "de": "Falklandinseln", "en": "Falkland Islands (Malvinas)", "fr": "Îles Malouines" } }, { "code": "FM", "name": { "de": "Mikronesien", "en": "Micronesia", "fr": "Micronésie" } }, { "code": "FO", "name": { "de": "Färöer", "en": "Faroe Islands", "fr": "Iles Faröe" } }, { "code": "FR", "name": { "de": "Frankreich", "en": "France", "fr": "France" } }, { "code": "GA", "name": { "de": "Gabun", "en": "Gabon", "fr": "Gabon" } }, { "code": "GB", "name": { "de": "Großbritannien", "en": "United Kingdom", "fr": "Royaume Uni" } }, { "code": "GD", "name": { "de": "Grenada", "en": "Grenada", "fr": "Grenade" } }, { "code": "GE", "name": { "de": "Georgien", "en": "Georgia", "fr": "Géorgie" } }, { "code": "GF", "name": { "de": "Französisch-Guyana", "en": "French Guiana", "fr": "Guyane française" } }, { "code": "GG", "name": { "de": "Guernsey (Kanalinsel)", "en": "Guernsey", "fr": "Guernsey" } }, { "code": "GH", "name": { "de": "Ghana", "en": "Ghana", "fr": "Ghana" } }, { "code": "GI", "name": { "de": "Gibraltar", "en": "Gibraltar", "fr": "Gibraltar" } }, { "code": "GL", "name": { "de": "Grönland", "en": "Greenland", "fr": "Gröenland" } }, { "code": "GM", "name": { "de": "Gambia", "en": "Gambia", "fr": "Gambie" } }, { "code": "GN", "name": { "de": "Guinea", "en": "Guinea", "fr": "Guinée" } }, { "code": "GP", "name": { "de": "Guadeloupe", "en": "Guadeloupe", "fr": "Guadeloupe" } }, { "code": "GQ", "name": { "de": "Äquatorialguinea", "en": "Equatorial Guinea", "fr": "Guinée équatoriale" } }, { "code": "GR", "name": { "de": "Griechenland", "en": "Greece", "fr": "Grèce" } }, { "code": "GS", "name": { "de": "Südgeorgien und südliche Sandwichinseln", "en": "South Georgia and the South Sandwich Islands", "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud" } }, { "code": "GT", "name": { "de": "Guatemala", "en": "Guatemala", "fr": "Guatemala" } }, { "code": "GU", "name": { "de": "Guam", "en": "Guam", "fr": "Guam" } }, { "code": "GW", "name": { "de": "Guinea-Bissau", "en": "Guinea-Bissau", "fr": "Guinée-Bissau" } }, { "code": "GY", "name": { "de": "Guyana", "en": "Guyana", "fr": "Guyana" } }, { "code": "HK", "name": { "de": "Hongkong", "en": "Hong Kong", "fr": "Hong Kong" } }, { "code": "HM", "name": { "de": "Heard und McDonaldinseln", "en": "Heard and McDonald Islands", "fr": "Îles Heard-et-MacDonald" } }, { "code": "HN", "name": { "de": "Honduras", "en": "Honduras", "fr": "Honduras" } }, { "code": "HR", "name": { "de": "Kroatien", "en": "Croatia", "fr": "Croatie" } }, { "code": "HT", "name": { "de": "Haiti", "en": "Haiti", "fr": "Haïti" } }, { "code": "HU", "name": { "de": "Ungarn", "en": "Hungary", "fr": "Hongrie" } }, { "code": "ID", "name": { "de": "Indonesien", "en": "Indonesia", "fr": "Indonésie" } }, { "code": "IE", "name": { "de": "Irland", "en": "Ireland", "fr": "Irlande" } }, { "code": "IL", "name": { "de": "Israel", "en": "Israel", "fr": "Israël" } }, { "code": "IM", "name": { "de": "Insel Man", "en": "Isle of Man", "fr": "Île de Man" } }, { "code": "IN", "name": { "de": "Indien", "en": "India", "fr": "Inde" } }, { "code": "IO", "name": { "de": "Britisches Territorium im Indischen Ozean", "en": "British Indian Ocean Territory", "fr": "Territoire Britannique de l'Océan Indien" } }, { "code": "IQ", "name": { "de": "Irak", "en": "Iraq", "fr": "Iraq" } }, { "code": "IR", "name": { "de": "Iran (Islamische Republik)", "en": "Iran (Islamic Republic of)", "fr": "Iran (République islamique)" } }, { "code": "IS", "name": { "de": "Island", "en": "Iceland", "fr": "Islande" } }, { "code": "IT", "name": { "de": "Italien", "en": "Italy", "fr": "Italie" } }, { "code": "JE", "name": { "de": "Jersey", "en": "Jersey", "fr": "Jersey" } }, { "code": "JM", "name": { "de": "Jamaika", "en": "Jamaica", "fr": "Jamaïque" } }, { "code": "JO", "name": { "de": "Jordanien", "en": "Jordan", "fr": "Jordanie" } }, { "code": "JP", "name": { "de": "Japan", "en": "Japan", "fr": "Japon" } }, { "code": "KE", "name": { "de": "Kenia", "en": "Kenya", "fr": "Kenya" } }, { "code": "KG", "name": { "de": "Kirgisistan", "en": "Kyrgyz Republic", "fr": "Kirghizistan" } }, { "code": "KH", "name": { "de": "Kambodscha", "en": "Cambodia", "fr": "Cambodge" } }, { "code": "KI", "name": { "de": "Kiribati", "en": "Kiribati", "fr": "Kiribati" } }, { "code": "KM", "name": { "de": "Komoren", "en": "Comoros", "fr": "Comorès" } }, { "code": "KN", "name": { "de": "St. Kitts und Nevis", "en": "Saint Kitts and Nevis", "fr": "Saint Kitts et Nevis" } }, { "code": "KP", "name": { "de": "Korea (Nord)", "en": "Korea (Democratic People's Republic of)", "fr": "Corée (République démocratique de)" } }, { "code": "KR", "name": { "de": "Korea (Süd)", "en": "Korea (Republic of)", "fr": "Corée (République de)" } }, { "code": "KW", "name": { "de": "Kuwait", "en": "Kuwait", "fr": "Koweït" } }, { "code": "KY", "name": { "de": "Kaimaninseln", "en": "Cayman Islands", "fr": "Îles Caïmans" } }, { "code": "KZ", "name": { "de": "Kasachstan", "en": "Kazakhstan", "fr": "Kazakhstan" } }, { "code": "LA", "name": { "de": "Laos", "en": "Laos", "fr": "Laos" } }, { "code": "LB", "name": { "de": "Libanon", "en": "Lebanon", "fr": "Liban" } }, { "code": "LC", "name": { "de": "St. Lucia", "en": "Saint Lucia", "fr": "Sainte Lucie" } }, { "code": "LI", "name": { "de": "Liechtenstein", "en": "Liechtenstein", "fr": "Liechtenstein" } }, { "code": "LK", "name": { "de": "Sri Lanka", "en": "Sri Lanka", "fr": "Sri Lanka" } }, { "code": "LR", "name": { "de": "Liberia", "en": "Liberia", "fr": "Liberia" } }, { "code": "LS", "name": { "de": "Lesotho", "en": "Lesotho", "fr": "Lesotho" } }, { "code": "LT", "name": { "de": "Litauen", "en": "Lithuania", "fr": "Lituanie" } }, { "code": "LU", "name": { "de": "Luxemburg", "en": "Luxembourg", "fr": "Luxembourg" } }, { "code": "LV", "name": { "de": "Lettland", "en": "Latvia", "fr": "Lettonie" } }, { "code": "LY", "name": { "de": "Libyen", "en": "Libyan Arab Jamahiriya", "fr": "Libye" } }, { "code": "MA", "name": { "de": "Marokko", "en": "Morocco", "fr": "Maroc" } }, { "code": "MC", "name": { "de": "Monaco", "en": "Monaco", "fr": "Monaco" } }, { "code": "MD", "name": { "de": "Moldavien", "en": "Moldova", "fr": "Moldavie" } }, { "code": "ME", "name": { "de": "Montenegro", "en": "Montenegro", "fr": "Monténégro" } }, { "code": "MF", "name": { "de": "St. Martin", "en": "Saint Martin", "fr": "Saint-Martin" } }, { "code": "MG", "name": { "de": "Madagaskar", "en": "Madagascar", "fr": "Madagascar" } }, { "code": "MH", "name": { "de": "Marshallinseln", "en": "Marshall Islands", "fr": "Îles Marshall" } }, { "code": "MK", "name": { "de": "Ehemalige Jugoslawische Republik Mazedonien", "en": "The Former Yugoslav Republic of Macedonia", "fr": "Macédoine" } }, { "code": "ML", "name": { "de": "Mali", "en": "Mali", "fr": "Mali" } }, { "code": "MM", "name": { "de": "Myanmar (Burma)", "en": "Myanmar", "fr": "Myanmar" } }, { "code": "MN", "name": { "de": "Mongolei", "en": "Mongolia", "fr": "Mongolie" } }, { "code": "MO", "name": { "de": "Macao", "en": "Macau", "fr": "Macau" } }, { "code": "MP", "name": { "de": "Nördliche Marianen", "en": "Northern Mariana Islands", "fr": "Îles Mariannes du Nord" } }, { "code": "MQ", "name": { "de": "Martinique", "en": "Martinique", "fr": "Martinique" } }, { "code": "MR", "name": { "de": "Mauretanien", "en": "Mauritania", "fr": "Mauritanie" } }, { "code": "MS", "name": { "de": "Montserrat", "en": "Montserrat", "fr": "Montserrat" } }, { "code": "MT", "name": { "de": "Malta", "en": "Malta", "fr": "Malte" } }, { "code": "MU", "name": { "de": "Mauritius", "en": "Mauritius", "fr": "Île Maurice" } }, { "code": "MV", "name": { "de": "Malediven", "en": "Maldives", "fr": "Maldives" } }, { "code": "MW", "name": { "de": "Malawi", "en": "Malawi", "fr": "Malawi" } }, { "code": "MX", "name": { "de": "Mexiko", "en": "Mexico", "fr": "Mexique" } }, { "code": "MY", "name": { "de": "Malaysia", "en": "Malaysia", "fr": "Malaisie" } }, { "code": "MZ", "name": { "de": "Mosambik", "en": "Mozambique", "fr": "Mozambique" } }, { "code": "NA", "name": { "de": "Namibia", "en": "Namibia", "fr": "Namibie" } }, { "code": "NC", "name": { "de": "Neukaledonien", "en": "New Caledonia", "fr": "Nouvelle Calédonie" } }, { "code": "NE", "name": { "de": "Niger", "en": "Niger", "fr": "Niger" } }, { "code": "NF", "name": { "de": "Norfolkinsel", "en": "Norfolk Island", "fr": "Île Norfolk" } }, { "code": "NG", "name": { "de": "Nigeria", "en": "Nigeria", "fr": "Nigéria" } }, { "code": "NI", "name": { "de": "Nicaragua", "en": "Nicaragua", "fr": "Nicaragua" } }, { "code": "NL", "name": { "de": "Niederlande", "en": "Netherlands", "fr": "Pays-Bas" } }, { "code": "NO", "name": { "de": "Norwegen", "en": "Norway", "fr": "Norvège" } }, { "code": "NP", "name": { "de": "Nepal", "en": "Nepal", "fr": "Népal" } }, { "code": "NR", "name": { "de": "Nauru", "en": "Nauru", "fr": "Nauru" } }, { "code": "NU", "name": { "de": "Niue", "en": "Niue", "fr": "Nioué" } }, { "code": "NZ", "name": { "de": "Neuseeland", "en": "New Zealand", "fr": "Nouvelle-Zélande" } }, { "code": "OM", "name": { "de": "Oman", "en": "Oman", "fr": "Oman" } }, { "code": "PA", "name": { "de": "Panama", "en": "Panama", "fr": "Panama" } }, { "code": "PE", "name": { "de": "Peru", "en": "Peru", "fr": "Pérou" } }, { "code": "PF", "name": { "de": "Französisch-Polynesien", "en": "French Polynesia", "fr": "Polynésie francaise" } }, { "code": "PG", "name": { "de": "Papua-Neuguinea", "en": "Papua-New Guinea", "fr": "Papouasie-Nouvelle Guinée" } }, { "code": "PH", "name": { "de": "Philippinen", "en": "Philippines", "fr": "Philippines" } }, { "code": "PK", "name": { "de": "Pakistan", "en": "Pakistan", "fr": "Pakistan" } }, { "code": "PL", "name": { "de": "Polen", "en": "Poland", "fr": "Pologne" } }, { "code": "PM", "name": { "de": "St. Pierre und Miquelon", "en": "Saint Pierre and Miquelon", "fr": "Saint Pierre et Miquelon" } }, { "code": "PN", "name": { "de": "Pitcairn Insel", "en": "Pitcairn", "fr": "Pitcairn" } }, { "code": "PR", "name": { "de": "Puerto Rico", "en": "Puerto Rico", "fr": "Puerto Rico" } }, { "code": "PS", "name": { "de": "Palästinensische Autonomiegebiete", "en": "State of Palestine", "fr": "Palestine" } }, { "code": "PT", "name": { "de": "Portugal", "en": "Portugal", "fr": "Portugal" } }, { "code": "PW", "name": { "de": "Palau", "en": "Palau", "fr": "Palaos" } }, { "code": "PY", "name": { "de": "Paraguay", "en": "Paraguay", "fr": "Paraguay" } }, { "code": "QA", "name": { "de": "Katar", "en": "Qatar", "fr": "Qatar" } }, { "code": "RE", "name": { "de": "Reunion", "en": "Réunion", "fr": "La Réunion" } }, { "code": "RO", "name": { "de": "Rumänien", "en": "Romania", "fr": "Roumanie" } }, { "code": "RS", "name": { "de": "Serbien", "en": "Serbia", "fr": "Serbie" } }, { "code": "RU", "name": { "de": "Russische Föderation", "en": "Russian Federation", "fr": "Fédération de Russie" } }, { "code": "RW", "name": { "de": "Ruanda", "en": "Rwanda", "fr": "Rwanda" } }, { "code": "SA", "name": { "de": "Saudi-Arabien", "en": "Saudi Arabia", "fr": "Arabie Saoudite" } }, { "code": "SB", "name": { "de": "Salomonen", "en": "Solomon Islands", "fr": "Îles Salomon" } }, { "code": "SC", "name": { "de": "Seychellen", "en": "Seychelles", "fr": "Seychelles" } }, { "code": "SD", "name": { "de": "Sudan", "en": "Sudan", "fr": "Soudan" } }, { "code": "SE", "name": { "de": "Schweden", "en": "Sweden", "fr": "Suède" } }, { "code": "SG", "name": { "de": "Singapur", "en": "Singapore", "fr": "Singapour" } }, { "code": "SH", "name": { "de": "St. Helena", "en": "Saint Helena", "fr": "Sainte Hélène" } }, { "code": "SI", "name": { "de": "Slowenien", "en": "Slovenia", "fr": "Slovénie" } }, { "code": "SJ", "name": { "de": "Svalbard und Jan Mayen", "en": "Svalbard and Jan Mayen Islands", "fr": "Svalbard et Île Jan Mayen" } }, { "code": "SK", "name": { "de": "Slowakei", "en": "Slovakia", "fr": "Slovaquie" } }, { "code": "SL", "name": { "de": "Sierra Leone", "en": "Sierra Leone", "fr": "Sierra Leone" } }, { "code": "SM", "name": { "de": "San Marino", "en": "San Marino", "fr": "San Marin" } }, { "code": "SN", "name": { "de": "Senegal", "en": "Senegal", "fr": "Sénégal" } }, { "code": "SO", "name": { "de": "Somalia", "en": "Somalia", "fr": "Somalie" } }, { "code": "SR", "name": { "de": "Surinam", "en": "Suriname", "fr": "Surinam" } }, { "code": "SS", "name": { "de": "Südsudan", "en": "South Sudan", "fr": "Soudan du Sud" } }, { "code": "ST", "name": { "de": "Sao Tome und Principe", "en": "Sao Tome and Principe", "fr": "Sao Tomé-et-Principe" } }, { "code": "SV", "name": { "de": "El Salvador", "en": "El Salvador", "fr": "République du Salvador" } }, { "code": "SX", "name": { "de": "St. Martin (Niederländischer Teil)", "en": "Sint Maarten (Dutch part)", "fr": "Sint Maarten (partie néerlandaise)" } }, { "code": "SY", "name": { "de": "Syrien", "en": "Syrian Arab Republic", "fr": "Syrie" } }, { "code": "SZ", "name": { "de": "Swasiland", "en": "Swaziland", "fr": "Swaziland" } }, { "code": "TC", "name": { "de": "Turks- und Caicosinseln", "en": "Turks and Caicos Islands", "fr": "Îles Turques-et-Caïques" } }, { "code": "TD", "name": { "de": "Tschad", "en": "Chad", "fr": "Tchad" } }, { "code": "TF", "name": { "de": "Französische Süd- und Antarktisgebiete", "en": "French Southern Territories", "fr": "Terres Australes Françaises" } }, { "code": "TG", "name": { "de": "Togo", "en": "Togo", "fr": "Togo" } }, { "code": "TH", "name": { "de": "Thailand", "en": "Thailand", "fr": "Thaïlande" } }, { "code": "TJ", "name": { "de": "Tadschikistan", "en": "Tajikistan", "fr": "Tadjikistan" } }, { "code": "TK", "name": { "de": "Tokelau", "en": "Tokelau", "fr": "Tokelau" } }, { "code": "TL", "name": { "de": "Timor-Leste (Ostimor)", "en": "Timor-Leste", "fr": "Timor oriental" } }, { "code": "TM", "name": { "de": "Turkmenistan", "en": "Turkmenistan", "fr": "Turkménistan" } }, { "code": "TN", "name": { "de": "Tunesien", "en": "Tunisia", "fr": "Tunisie" } }, { "code": "TO", "name": { "de": "Tonga", "en": "Tonga", "fr": "Tonga" } }, { "code": "TR", "name": { "de": "Türkei", "en": "Turkey", "fr": "Turquie" } }, { "code": "TT", "name": { "de": "Trinidad und Tobago", "en": "Trinidad and Tobago", "fr": "Trinité-et-Tobago" } }, { "code": "TV", "name": { "de": "Tuvalu", "en": "Tuvalu", "fr": "Tuvalu" } }, { "code": "TW", "name": { "de": "Taiwan", "en": "Taiwan", "fr": "Taïwan" } }, { "code": "TZ", "name": { "de": "Tansania", "en": "Tanzania", "fr": "Tanzanie" } }, { "code": "UA", "name": { "de": "Ukraine", "en": "Ukraine", "fr": "Ukraine" } }, { "code": "UG", "name": { "de": "Uganda", "en": "Uganda", "fr": "Ouganda" } }, { "code": "UM", "name": { "de": "Kleinere Inselbesitzungen der Vereinigten Staaten", "en": "United States Minor Outlying Islands", "fr": "Îles Mineures Éloignées des États-Unis" } }, { "code": "US", "name": { "de": "Vereinigte Staaten von Amerika", "en": "United States", "fr": "États-Unis" } }, { "code": "UY", "name": { "de": "Uruguay", "en": "Uruguay", "fr": "Uruguay" } }, { "code": "UZ", "name": { "de": "Usbekistan", "en": "Uzbekistan", "fr": "Ouzbékistan" } }, { "code": "VA", "name": { "de": "Vatikan", "en": "Holy See", "fr": "Vatican" } }, { "code": "VC", "name": { "de": "St. Vincent und die Grenadinen", "en": "Saint Vincent and the Grenadines", "fr": "Saint Vincent et les Grenadines" } }, { "code": "VE", "name": { "de": "Venezuela", "en": "Venezuela", "fr": "Venezuela" } }, { "code": "VG", "name": { "de": "Britische Jungferninseln", "en": "Virgin Islands (British)", "fr": "Îles Vierges Britanniques" } }, { "code": "VI", "name": { "de": "Amerikanische Jungferninseln", "en": "Virgin Islands (U.S.)", "fr": "Îles Vierges des États Unis" } }, { "code": "VN", "name": { "de": "Vietnam", "en": "Vietnam", "fr": "Vietnam" } }, { "code": "VU", "name": { "de": "Vanuatu", "en": "Vanuatu (Republic of, formerly New Hebrides)", "fr": "Vanuatu" } }, { "code": "WF", "name": { "de": "Wallis und Futuna", "en": "Wallis and Futuna Islands", "fr": "Wallis et Futuna" } }, { "code": "WS", "name": { "de": "Samoa", "en": "Samoa (Independent State of)", "fr": "Samoa" } }, { "code": "XE", "name": { "de": "England", "en": "United Kingdom (England)", "fr": "Royaume Uni (Angleterre)" } }, { "code": "XK", "name": { "de": "Kosovo", "en": "Kosovo", "fr": "Kosovo" } }, { "code": "XN", "name": { "de": "Nordirland", "en": "United Kingdom (Northern Ireland)", "fr": "Royaume Uni (Irlande du Nord)" } }, { "code": "XS", "name": { "de": "Schottland", "en": "United Kingdom (Scotland)", "fr": "Royaume Uni (Ecosse)" } }, { "code": "XW", "name": { "de": "Wales", "en": "United Kingdom (Wales)", "fr": "Royaume Uni (Pays de Galles)" } }, { "code": "YE", "name": { "de": "Jemen", "en": "Yemen", "fr": "Yémen" } }, { "code": "YT", "name": { "de": "Mayotte", "en": "Mayotte", "fr": "Mayotte" } }, { "code": "ZA", "name": { "de": "Südafrika", "en": "South Africa", "fr": "Afrique du Sud" } }, { "code": "ZM", "name": { "de": "Sambia", "en": "Zambia", "fr": "Zambie" } }, { "code": "ZW", "name": { "de": "Simbabwe", "en": "Zimbabwe", "fr": "Zimbabwe" } }], "orderOrigins": [{ "idCode": "ORDER_ORIG/FOREIGN_COUNTRY", "name": { "de": "Ausland", "en": "Foreign country", "fr": "Étranger" } }, { "idCode": "ORDER_ORIG/SWISS", "name": { "de": "Schweiz", "en": "Swiss", "fr": "Suisse" } }], "allowLoginWithoutTPEConnected": false, "captureTariffsAndQuantityEnabled": false, "addAliasMandatory": false, "ticketHolderScreenConfigs": [], "cfcacheEnabled": false, "lotteryUpgradeDowngradeSeatCatEnabled": false, "lotterySeatWithEnabled": false, "useGoogleEnhancedTracking": false, "lotteryHistoryEnabled": false, "useGA4": false, "printReceiptOnlyOnRequest": false, "displayTpeInstructions": false }, "user": {}, "cart": {} }</script>
+  <script
+    type="application/javascript">window.secutix = window.secutix || {}; secutix.__i18n__ = { "currentTranslations": { "label.error.notInResale.title": "Die Ticketbörse ist nun geschlossen", "label.orderDetailView.ticket.notPrintable": "Tickets auf App \"Paléo Tickets\"", "mobile.menu.showProductNavigation": "false", "footer.menu.labels": "Allgemeine Bedingungen|Charte de confidentialité|Nous contacter|Schwarzmarkt - FRC", "label.button.eticket.from.desktop": "Ausdrucken", "label.ticketsView.help.tickets.resale": "Ab 31. März. Diese Seite enthält die Tickets, die Sie in unserer Ticketbörse zum Wiederverkauf anbieten können. Nur Tagestickets, persönliche Abonnements und Stellplätze für Wohnmobile können wieder zum Verkauf angeboten werden. Partnertickets und Flex-Bons können nicht wieder zum Verkauf angeboten werden.", "label.storefront.hotdeals.title": "Highlights", "label.popup.refund.credit.information": "Bitte geben Sie Ihre Bankdaten an. Nach dem Ausfüllen und Bestätigen können Sie eine Zusammenfassung Ihres Erstattungsantrags herunterladen.<br><br> Die Rückerstattung wird innerhalb von 10 Werktagen wirksam. <br><br><B> ACHTUNG: Sobald Sie auf \"weiter\" klicken, ist Ihr Antrag auf Rückerstattung endgültig und Sie können ihn nicht mehr rückgängig machen. </B>", "theme.js": "/custom/PALEO_BOURS/custom.js?09", "label.account.resellTickets.parameters.summary.totalPrice": "Gesamtpreis :", "label.products.goods.storefront.title": "Highlights", "label.refund.credit.success": "Ihr Antrag auf Erstattung<B> wurde erfolgreich durchgeführt.</B> <br><br>Ihre Rückerstattung ist garantiert. Die Rückerstattung erfolgt innerhalb von <B>30 Werktagen</B>.<br><br>Sie können <B>>>{0}<<</B> klicken, um die Zusammenfassung Ihres Antrags herunterzuladen.", "label.button.buy": "die Bestellung abschließen", "label.performances.prices.from.standalone": "Preis:", "label.button.buy.SALE": "die Bestellung abschließen", "label.charges.mergeChargesToTicketPrice": "Der angegebene Preis enthält alle Steuern, pro Ticket:", "label.productTypeLabel.VOUCHER": "GUTSCHEINE", "label.account.resellTickets.parameters.summary.remark": "(*) Der Gesamtbetrag, den Sie erhalten, enthält die Mehrwertsteuer. Dieser Betrag wird unter der Voraussetzung gutgeschrieben, dass die Tickets verkauft werden. Sie werden innerhalb von 15 Tagen benachrichtigt.", "theme.equilibrium": "true", "theme.css": "/custom/PALEO_BOURS/custom.css", "label.resale.ticket.button.bulkResell.single": "1 Ticket zum Weiterverkauf anbieten", "label.button.book": "wählen", "label.error.inactivePOSorSC": "La billetterie est fermée.", "gravity.MobileMenu.accountOffers": "Angebote", "label.productTypeLabel.PASS": "TICKETS", "label.list.otherProductsList.title.singleTab": "TICKETS", "label.account.resellTickets.parameters.summary.ticketNumber": "Anzahl der Tickets :", "gravity.Product.priceFrom": "Ab:", "label.ticketsView.help.noTickets.resale": "Ab 31. März. Diese Seite enthält die Tickets, die Sie in unserer Ticketbörse zum Wiederverkauf anbieten können. Nur Tagestickets, persönliche Abonnements und Stellplätze für Wohnmobile können wieder zum Verkauf angeboten werden. Partnertickets und Flex-Bons können nicht wieder zum Verkauf angeboten werden.", "label.login.individual.infoMessage": "Bitte loggen Sie sich ein oder erstellen Sie ein neues Konto um Ihre Bestellung zu machen und unsere Dienstleistungen zu nutzen.", "label.generalInfoBox.labels": "Allgemeine Bedingungen|Charte de confidentialité|Schwarzmarkt - FRC", "ticketshop.containers.App.title": "Paléo Festival Nyon - Ticketing", "gravity.Product.full": "Sold out", "label.ticketsView.success.resale": "Ihr Ticket wird nun in unserer Ticketbörse zum Kauf angeboten. Sie können diesen Wiederverkauf jederzeit über die Rubrik \"Tickets\" abbrechen.", "label.error.notInResaleError": "Die Ticketbörse wird im Frühjahr 2024 eröffnet. Alle Informationen werden bis März auf www.paleo.ch veröffentlicht.", "label.popup.refund.credit.iban": "IBAN", "gravity.Product.comingSoon": "Sold out", "label.buy.unavailable": "Sold out", "label.welcomeView.content": "Willkommen auf Ihrem Paléo Kundenkonto. Ihr Konto erlaubt Ihnen folgende Aktionen: <br>- Ihre Kaufhistorie einsehen.<br>- Profitieren von Angeboten und Promotionen speziell für Sie.<br><br> Ihre Tickets und Abonnements (ohne Flex-Gutscheine) werden von nun an auf einer Handy-Applikation «Paléo Tickets» geliefert. <a href=https://yeah.paleo.ch/de/faq-paleo-tickets target=\"_blank\"> Weitere Infos </a><br>Das Herunterladen von Flex-Gutscheinen erfolgt über Ihr Kundenkonto in der Rubrik \"Tickets\". <br>Falls die Fragen Tickets betreffen, schreiben Sie bitte an tickets@paleo.ch.", "gravity.Product.soldOutText": "Sold out", "label.buy.full": "Sold out", "label.ticketsView.viewTitle.resale": "Ihre Tickets zum Weiterverkauf verfügbar – Ticketbörse", "label.account.resellTickets.financialInfo.refundIntoCreditNote": "Falls wir einen Käufer für Ihr/e Ticket/e finden, wird Ihnen der Betrag auf folgende Weise gutgeschrieben: <br><br> <B>1)\tIhr ursprünglicher Kauf erfolgte auf paleo.ch :</B> Der Betrag wird auf das bei Ihrem Kauf verwendete Zahlungsmittel gutgeschrieben (Twint, Visa, Mastercard, Postfinance, Amex).  <br><br><B>2)\tIhr ursprünglicher Kauf wurde im Paléo Shop, auf Ticketcorner.ch getätigt oder Sie sind nicht die Person, die den ursprünglichen Kauf getätigt hat:</B> Ein Guthaben wird Ihrem Kundenkonto gutgeschrieben. Sie werden per E-Mail benachrichtigt und erhalten Anweisungen, wie Sie die Rückerstattung dieses Guthabens beantragen können.", "label.orderSummary.noDelay": "24 Stunden", "label.button.cart.buy": "wählen", "label.cart.error.noShippingForCartProducts.1": "Aus technischen Gründen ist es nicht möglich, \"Flex-Gutscheine\" zusammen mit Abonnements oder 6-Tage-Paketen zu bestellen. Bitte nehmen Sie mehrere separate Bestellungen vor.", "label.resale.ticket.button.cancelresale": "wiederverkauf abbrechen", "label.resale.ticket.button.bulkResell.plural": "Mehrere Tickets zum Weiterverkauf anbieten", "waitingRoom.eject.afterOrder": "true" }, "translations": { "en": "https://s3.eu-central-2.amazonaws.com/content-paleo-prod-secutix-bcw0ozo3/tnwi/bours/boursene/labels-22bedb46-81f9-42b6-826f-cc4aa5a8c24a-labels_en.json", "fr": "https://s3.eu-central-2.amazonaws.com/content-paleo-prod-secutix-bcw0ozo3/tnwi/bours/boursene/labels-22bedb46-81f9-42b6-826f-cc4aa5a8c24a-labels_fr.json" } }</script>
+  <script type="text/javascript" src="/custom/PALEO_BOURS/custom.js?09"></script>
+  <script type="text/javascript"
+    src="https://stx-gravity-p13-widgets.quantum.secutix.com/stx-widgets/v2/Widgets.js"></script>
+
+
+  <script type="text/javascript">
+    STX.Widgets.start({
+      apiKey: '',
+      hostname: 'bourse.paleo.ch',
+      language: 'de',
+      widgets: [{
+        widget: 'TicketShop', config: secutix.__APP__, root: '#root',
+        showSeeAllButton: true,
+        activateEnhancedFeature: false,
+        forceShowCodeInLanguageSelector: false,
+        contactItems: [{ "locale": "en", "value": "name" }, { "locale": "fr", "value": "name" }, { "locale": "de", "value": "name" }, { "locale": "es", "value": "name" }, { "locale": "ca", "value": "name" }],
+        skipLinks: [],
+      }]
+    });
+  </script>
+  <script src="https://stx-gravity-p13-widgets.quantum.secutix.com/0.0.6855/stx-widgets/v2/vendor.js"></script>
+  <script
+    type="text/javascript">if (!window.dataLayer) { dataLayer = []; } var profile = JSON.parse(localStorage.getItem("dataLUP")); if (profile) { dataLayer.push({ 'event': 'ACCOUNT_EVENTS', 'event-data': { 'user': profile } }); }</script>
+
+
+
+
+  <script src="https://stx-gravity-p13-widgets.quantum.secutix.com/0.0.6855/stx-widgets/v2/TicketShop.js"></script>
+  <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
+    <div>
+      <div class="rc-tooltip  rc-tooltip-placement-top  rc-tooltip-hidden" style="left: 868.333px; top: 813.183px;">
+        <div class="rc-tooltip-content">
+          <div class="rc-tooltip-arrow"></div>
+          <div class="rc-tooltip-inner" role="tooltip">
+            <div style="width: 220px;"><span style="font-size: 14pt;"><strong>GIMS · TIMMY TRUMPET · ZAZ · BOB SINCLAR
+                </strong></span><strong><span style="font-size: 14pt;">·</span> <span style="font-size: 12pt;">LUIZA ·
+                  Roni Size · THK · Ensemble Vocal Utopie – Carmina Burana </span></strong><span
+                style="font-size: 12pt;">· Xana Romeo · Little Lion Sound &amp; Basta Lion · Omega Nebula · Esaïa · Open
+                Season · Trolska Polska · Tuuletar · Hialøsa</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
+    <div>
+      <div class="rc-tooltip  rc-tooltip-placement-top  rc-tooltip-hidden" style="left: 485px; top: 757.183px;">
+        <div class="rc-tooltip-content">
+          <div class="rc-tooltip-arrow"></div>
+          <div class="rc-tooltip-inner" role="tooltip">
+            <div style="width: 220px;"><strong><span style="font-size: 14pt;">Katy Perry · Vald x Vladimir Cauchemar x
+                  Todiefor · Jok’Air · Vanessa Paradis · Helena ·</span> <span style="font-size: 12pt;">Adèle Castillon
+                  · marguerite · </span></strong><span style="font-size: 12pt;">Kabylie Minogue · La Valentina ·
+                LinaPary · Dope Saint Jude · LinLin · ETO · Deize Tigrona &amp; Doucesoeur · Marara Kelly · Tarrak ·
+                Trolska Polska · Teksti-TV 666</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
+    <div>
+      <div class="rc-tooltip  rc-tooltip-placement-top  rc-tooltip-hidden" style="left: 101.667px; top: 458.85px;">
+        <div class="rc-tooltip-content">
+          <div class="rc-tooltip-arrow"></div>
+          <div class="rc-tooltip-inner" role="tooltip">
+            <div style="width: 220px;"><strong><span style="font-size: 14pt;">Orelsan · Mosimann · Julien Clerc ·</span>
+                <span style="font-size: 12pt;">Yamê · Solann · Björn Again · Keny Arkana </span></strong><span
+                style="font-size: 12pt;">· Roxane · Camille Yembe · Urumi · Sueilo · DJ Schnake · Eihwar · Legit Girl DJ
+                · Nashwa · Värttinä · Estelle Zamme · Katarina Barruk</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
