@@ -22,6 +22,14 @@ public class Worker : BackgroundService
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         _logger.LogInformation("URL Monitor Worker Service started at: {time}", DateTimeOffset.Now);
+        _logger.LogInformation("EmailSettings: SmtpHost={SmtpHost}, SmtpPort={SmtpPort}, Username={Username}, FromEmail={FromEmail}, ToEmail={ToEmail}",
+            _configuration["EmailSettings:SmtpHost"],
+            _configuration["EmailSettings:SmtpPort"],
+            _configuration["EmailSettings:Username"],
+            _configuration["EmailSettings:FromEmail"],
+            _configuration["EmailSettings:ToEmail"]
+            );
+
 
         while (!stoppingToken.IsCancellationRequested)
         {
@@ -48,7 +56,7 @@ public class Worker : BackgroundService
             _logger.LogWarning("Monitor URL or local file path not configured");
             return;
         }
-
+        await SendTestMailAsync();
         string content;
 
         if (!string.IsNullOrEmpty(localFilePath))
@@ -147,7 +155,7 @@ public class Worker : BackgroundService
         return products;
     }
 
-    private async Task SendEmailNotificationAsync(List<ProductInfo> products)
+    private async Task SendEmailAsync(string subject, string body)
     {
         var smtpSettings = _configuration.GetSection("EmailSettings");
         var smtpHost = smtpSettings["SmtpHost"];
@@ -177,21 +185,35 @@ public class Worker : BackgroundService
             var mailMessage = new MailMessage
             {
                 From = new MailAddress(fromEmail ?? smtpUsername),
-                Subject = "Paleo tickets available for Purchase",
-                Body = $"On {DateTimeOffset.Now}, tickets are available for the following dates:\n\n" +
-                       string.Join("\n", products.Select(p => $"- Event Date: {p.EventDate}")),
+                Subject = subject,
+                Body = body,
                 IsBodyHtml = false
             };
 
             mailMessage.To.Add(toEmail);
 
             await smtpClient.SendMailAsync(mailMessage);
-            _logger.LogInformation("Email notification sent successfully to {email}", toEmail);
+            _logger.LogInformation("Email sent successfully to {email}", toEmail);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Failed to send email notification");
+            _logger.LogError(ex, "Failed to send email");
         }
+    }
+
+    private async Task SendEmailNotificationAsync(List<ProductInfo>? products)
+    {
+        var subject = "Paleo tickets available for Purchase";
+        var body = $"On {DateTimeOffset.Now}, tickets are available for the following dates:\n\n" +
+                   string.Join("\n", products?.Select(p => $"- Event Date: {p.EventDate}") ?? Array.Empty<string>());
+        await SendEmailAsync(subject, body);
+    }
+
+    private async Task SendTestMailAsync()
+    {
+        var subject = "PaleoWorkerService started successfully";
+        var body = $"The PaleoWorkerService started successfully at {DateTimeOffset.Now}.";
+        await SendEmailAsync(subject, body);
     }
 }
 
