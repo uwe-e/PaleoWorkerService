@@ -29,7 +29,9 @@ public class Worker : BackgroundService
             _configuration["EmailSettings:FromEmail"],
             _configuration["EmailSettings:ToEmail"]
             );
-
+        
+        // Send a test email on startup to confirm email configuration is correct
+        await SendTestMailAsync();
 
         while (!stoppingToken.IsCancellationRequested)
         {
@@ -56,7 +58,7 @@ public class Worker : BackgroundService
             _logger.LogWarning("Monitor URL or local file path not configured");
             return;
         }
-        await SendTestMailAsync();
+        
         string content;
 
         if (!string.IsNullOrEmpty(localFilePath))
