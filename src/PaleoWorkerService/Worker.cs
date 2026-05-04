@@ -100,8 +100,9 @@ public class Worker : BackgroundService
             using var driver = new ChromeDriver(options);
             driver.Navigate().GoToUrl(url);
 
-            // Wait for page to load (adjust as needed)
-            System.Threading.Thread.Sleep(3000);
+            // Wait for page to load
+            var pageLoadDelayMs = _configuration.GetValue<int>("MonitorSettings:PageLoadDelayMilliseconds", 3000);
+            System.Threading.Thread.Sleep(pageLoadDelayMs);
 
             var pageSource = driver.PageSource;
             driver.Quit();
