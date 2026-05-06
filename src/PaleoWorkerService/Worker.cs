@@ -1,8 +1,8 @@
 using HtmlAgilityPack;
+using OpenQA.Selenium.Chrome;
+using System;
 using System.Net;
 using System.Net.Mail;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace UrlMonitorWorker;
 
@@ -11,6 +11,7 @@ public class Worker : BackgroundService
     private readonly ILogger<Worker> _logger;
     private readonly IConfiguration _configuration;
     private readonly TimeSpan _pollingInterval;
+    private readonly Random _random = new();
 
     public Worker(ILogger<Worker> logger, IConfiguration configuration)
     {
@@ -44,8 +45,27 @@ public class Worker : BackgroundService
                 _logger.LogError(ex, "Error occurred while monitoring URL");
             }
 
-            await Task.Delay(_pollingInterval, stoppingToken);
+            var variableDelay = GetVariableDelay();
+            _logger.LogInformation("Next poll in {delay} seconds", variableDelay.TotalSeconds);
+            await Task.Delay(variableDelay, stoppingToken);
         }
+    }
+
+    private TimeSpan GetVariableDelay()
+    {
+        // Get variation percentage from config (default 20%)
+        var variationPercent = _configuration.GetValue<int>("MonitorSettings:PollingVariationPercent", 20);
+
+        // Calculate random variation (e.g., ±20% of base interval)
+        var variationRange = _pollingInterval.TotalSeconds * (variationPercent / 100.0);
+        var randomVariation = (_random.NextDouble() * 2 - 1) * variationRange; // Range: -variationRange to +variationRange
+
+        var adjustedSeconds = _pollingInterval.TotalSeconds + randomVariation;
+
+        // Ensure minimum delay of at least 1 second
+        adjustedSeconds = Math.Max(1, adjustedSeconds);
+
+        return TimeSpan.FromSeconds(adjustedSeconds);
     }
 
     private async Task MonitorUrlAsync(CancellationToken cancellationToken)
@@ -122,6 +142,23 @@ public class Worker : BackgroundService
         if (productBoxes == null)
         {
             _logger.LogInformation("No stx-ProductBox elements found");
+
+            try
+            {
+                var debugDirectory = Path.Combine(AppContext.BaseDirectory, "DebugHtml");
+                Directory.CreateDirectory(debugDirectory); // Creates directory if it doesn't exist
+
+                var debugFileName = $"debug-html-{DateTimeOffset.Now:yyyy-MM-dd-HH-mm-ss}.html";
+                var debugFilePath = Path.Combine(debugDirectory, debugFileName);
+
+                File.WriteAllText(debugFilePath, htmlContent);
+                _logger.LogWarning("HTML content saved to {path} for debugging", debugFilePath);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to save HTML debug file");
+            }
+
             return products;
         }
 
